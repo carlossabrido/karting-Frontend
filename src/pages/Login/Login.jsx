@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, userData } from '../UserSlice';
 import { useNavigate } from 'react-router-dom';
 import { logMe } from '../../Services/Apicalls';
+import jwt_decode from "jwt-decode"
 
 export const Login = () => {
   const dispatch= useDispatch()
@@ -17,11 +18,13 @@ export const Login = () => {
     password:""
   })
 
-  useEffect(() => {
-    if (dataRdx.credentials.token) {
-      navigate();
-    }
-  }, []);
+  const [message,setMessage]=useState("")
+
+  // useEffect(() => {
+  //   if (dataRdx.credentials.token) {
+  //     navigate();
+  //   }
+  // }, []);
   
   const handlerLogin=(e)=>{
     setCredentials((prevState)=>({
@@ -34,18 +37,13 @@ export const Login = () => {
     e.preventDefault()
     logMe(credentials)
     .then((resultado) => {
-      console.log(resultado);
-      const decoded = jwt_decode(resultado.data.token);
-      console.log(decoded);
+      const decoded =jwt_decode(resultado.data.token);
       const datos = {
         token: decoded,
         bearer: resultado.data.token
- 
       };
-
       dispatch(login({ credentials: datos }));
-
-      setMessage(`Bienvenido de nuevo mr.${decoded.name}`);
+       setMessage(`Bienvenido de nuevo mr.${decoded.name}`);
       setTimeout(() => {
         navigate("/");
       }, 2750);
@@ -56,7 +54,7 @@ export const Login = () => {
   
   return (
     <div className='loginDesign'>
-     <Form className='loginForm'>
+      {message !== "" ? (<div>{message}</div>):(  <div><Form className='loginForm'>
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Email address</Form.Label>
       <Form.Control type="email" name='email' placeholder="Enter email" onChange={handlerLogin} />
@@ -70,7 +68,8 @@ export const Login = () => {
     <Button variant="primary" type="submit" onClick={(e)=>loginFunction(e)}>
       Submit
     </Button>
-  </Form>
+  </Form> </div>)}
+   
   </div>
   
   )

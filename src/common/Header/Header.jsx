@@ -6,31 +6,32 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from 'react-router-dom';
+import { logout, userData } from '../../pages/UserSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const Header = () => {
     const navigate= useNavigate()
+    const dataUSerRdx=useSelector(userData)
+ 
+    const dispatch=useDispatch()
+
+    const logMeOut = () => {
+      dispatch(logout({ credentials: {}}));
+      setTimeout(()=>{
+        navigate("/");
+      },500)
+    }
 
 
     return(
-        <Navbar className='color' collapseOnSelect expand="lg" >
+      <div>
+        {!dataUSerRdx?.credentials?.token ?(<div> <Navbar className='color' collapseOnSelect expand="lg" >
           <Container className='color'>
             <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link  onClick={()=>navigate('/home')}>Home</Nav.Link>
-                <Nav.Link href="#pricing">Pricing</Nav.Link>
-                <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    Separated link
-                  </NavDropdown.Item>
-                </NavDropdown>
               </Nav>
               <Nav>
                 <Nav.Link  onClick={()=>navigate('/login')}>Login</Nav.Link>
@@ -40,6 +41,24 @@ export const Header = () => {
               </Nav>
             </Navbar.Collapse>
           </Container>
-        </Navbar>
+        </Navbar></div>):(<Navbar className='color' collapseOnSelect expand="lg" >
+          <Container className='color'>
+            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="me-auto">
+                <Nav.Link  onClick={()=>navigate('/home')}>Home</Nav.Link>
+              </Nav>
+              <Nav>
+                <Nav.Link eventKey={2}  onClick={()=>{logMeOut();navigate('/')}}>
+                  logout
+                </Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>)
+        
+}
+        </div>
       );
     }
