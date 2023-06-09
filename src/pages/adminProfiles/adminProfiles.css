@@ -1,0 +1,9 @@
+.adminDesign{
+    background: linear-gradient(to right, black, rgb(59, 56, 56));
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
