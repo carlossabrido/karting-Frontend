@@ -2,3 +2,7 @@
     background-color: rgb(64, 64, 134);
     height: 92vh;
 }
+
+*::-webkit-scrollbar{
+    display: none;
+  }

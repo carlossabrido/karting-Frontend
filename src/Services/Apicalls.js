@@ -22,14 +22,19 @@ export const bringProfile=async(credentials)=>{
       }   
 }
 
-export const bringAllProfiles=async(credentials)=>{
+export const bringAllProfiles=async(credentials,seek)=>{
     console.log(credentials,'spy un duro')
     try{
         let config={
             headers:{
                 Authorization: `Bearer ${credentials.bearer}`
+            },
+            params:{
+                name: seek
+
             }
         }
+
         const response= await axios.get(`http://localhost:7000/user`,config)
          return response.data
     }catch (error) {

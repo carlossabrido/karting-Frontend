@@ -1,14 +1,34 @@
 .adminDesign{
     background: linear-gradient(to right, black, rgb(59, 56, 56));
-    height: 92vh;
+    min-height: 88vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-weight: bold;
 }
+.topScreen{
+    background: linear-gradient(to right, black, rgb(59, 56, 56));
 
+}
+.seekDesign{
+    margin-top: 1em;
+    background: linear-gradient(to right, black, rgb(59, 56, 56));
+    color: white;
+    border: solid 0.1em white;
+    border-radius: 10%;
+}
+
+.margin{
+    margin-top: 5em;
+
+}
 .table{
     height: 2em;
+    border: solid white;
+
+}
+.table:hover{
+    background-color: rgb(202, 43, 43);
     border: solid white;
 }
