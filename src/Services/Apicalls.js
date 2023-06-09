@@ -9,16 +9,20 @@ export const logMe=(credentials)=>{
     return axios.post("http://localhost:7000/user/login",credentials)
 }
 
-export const infoProfile=async(credentials)=>{
+export const bringProfile=async(credentials)=>{
+    console.log(credentials,'spy credentials')
     try{
         let config={
-            header:{
+            headers:{
                 Authorization: `Bearer ${credentials.bearer}`
             }
         }
-        const response= await axios.get(`http://localhost:7000/user ${credentials.token.id}`,config)
+        const response= await axios.get(`http://localhost:7000/user/${credentials.token.id}`,config)
          return response.data
     }catch (error) {
         console.log(error);
       }   
 }
+
+
+ 
