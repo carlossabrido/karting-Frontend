@@ -19,7 +19,7 @@ export const Header = () => {
     dispatch(logout({ credentials: {} }));
     setTimeout(() => {
       navigate("/");
-    }, 500);
+    }, 300);
   };
 
   return (
@@ -64,6 +64,7 @@ export const Header = () => {
                   <>
                   <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
                   <Nav.Link onClick={() => navigate("/profile")}>{dataUSerRdx.credentials.token.name}</Nav.Link>
+                  <Nav.Link onClick={() => navigate("/adminProfiles")}>Profiles</Nav.Link>
                   </>
                 )}
               </Nav>

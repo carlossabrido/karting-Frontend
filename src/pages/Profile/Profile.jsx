@@ -27,18 +27,18 @@ export const Profile = () => {
 
   return (
     <div className="profileDesing">
-            {infoProfile.name != 0 ? (
-            <div className='containerProfile'>
-            <div>{infoProfile.name}</div>
-            <div>{infoProfile.lastname}</div>
-            <div>{infoProfile.email}</div>
-            <div>{infoProfile.phone_number}</div>
-            </div>
-          ) : (
-            <div>CARGANDO</div>
-          )}
-        </div>
-      );
+    {infoProfile.name != 0 ? (
+    <div className='containerProfile'>
+    <div>{infoProfile.name}</div>
+    <div>{infoProfile.lastname}</div>
+    <div>{infoProfile.email}</div>
+    <div>{infoProfile.phone_number}</div>
+    </div>
+    ) : (
+    <div>CARGANDO</div>
+    )}
+    </div>
+    );
     }
 
 

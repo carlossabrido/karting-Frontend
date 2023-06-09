@@ -24,5 +24,20 @@ export const bringProfile=async(credentials)=>{
       }   
 }
 
+export const bringAllProfiles=async(credentials)=>{
+    console.log(credentials,'spy credentials')
+    try{
+        let config={
+            headers:{
+                Authorization: `Bearer ${credentials.bearer}`
+            }
+        }
+        const response= await axios.get(`http://localhost:7000/user`,config)
+         return response.data
+    }catch (error) {
+        console.log(error);
+      }   
+}
+
 
  
