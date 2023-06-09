@@ -1,16 +1,14 @@
 import axios from "axios";
 
 export const registerMe=(register)=>{
-    console.log(register,'soy register')
     return axios.post("http://localhost:7000/user",register)
 }
 export const logMe=(credentials)=>{
-    console.log(credentials,'soy credentials')
     return axios.post("http://localhost:7000/user/login",credentials)
 }
 
 export const bringProfile=async(credentials)=>{
-    console.log(credentials,'spy credentials')
+    
     try{
         let config={
             headers:{
@@ -25,7 +23,7 @@ export const bringProfile=async(credentials)=>{
 }
 
 export const bringAllProfiles=async(credentials)=>{
-    console.log(credentials,'spy credentials')
+    console.log(credentials,'spy un duro')
     try{
         let config={
             headers:{

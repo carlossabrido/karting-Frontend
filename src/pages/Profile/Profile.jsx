@@ -18,7 +18,6 @@ export const Profile = () => {
   useEffect(()=>{
     bringProfile(dataRx.credentials)
     .then((resultado)=>{
-      console.log(resultado,'soy resultado')
       setInfoProfile(resultado)
     })
     .catch((error)=>console.log(error))

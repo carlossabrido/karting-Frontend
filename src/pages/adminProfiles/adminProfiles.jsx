@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import './adminProfiles.css'
+import './AdminProfiles.css'
 import { userData } from '../UserSlice'
 import { useSelector } from 'react-redux'
 import { bringAllProfiles } from '../../Services/Apicalls'
+import { Col, Container, Row } from 'react-bootstrap'
 
 
-export const adminDesing = () => {
+export const AdminProfiles = () => {
     const[profile,setProfiles]=useState([])
     const[seek, setSeek]=useState("")
     const rdxData=useSelector(userData)
@@ -14,7 +15,8 @@ export const adminDesing = () => {
     useEffect(()=>{
         bringAllProfiles(rdxData.credentials)
         .then((resultado)=>{
-        if(resultado.lenght>0){
+            console.log(resultado,'tio')
+        if(resultado.length>0){
             setProfiles(resultado)
         }})
         .catch((error)=>console.log(error))
@@ -23,26 +25,18 @@ export const adminDesing = () => {
 
 
   return (
-    <div></div>
-    //  <div className='profileDesing'>
-    // //   {infoProfile.map((profiles)=>(
-    // //   <Container key={profiles.id}>
-    // //   <Row>  
-    // //     <Col>{profiles.name}</Col>
-    // //   </Row>
-    // //   <Row> 
-    // //     <Col>{profiles.lastname}</Col>
-    // //   </Row>
-    // //   <Row> 
-    // //     <Col>{profiles.email}</Col>
-    // //   </Row>
-    // //   <Row> 
-    // //     <Col>{profiles.phone_number}</Col>
-    // //   </Row>
-    
-    // // </Container>
-    // // ))}
-    //  </div>
+     <div className='adminDesign'>
+     <Container>
+            {profile.map((profile)=>(
+                <Row className='table' key={profile.id}>
+                    <Col>{profile.name}</Col>
+                    <Col>{profile.lastname}</Col>
+                    <Col>{profile.email}</Col>
+                    <Col>{profile.phone_number}</Col>
+                </Row>
+            ))}
+     </Container>
+     </div>
   )
   
 }
