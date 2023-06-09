@@ -4,3 +4,21 @@
     
     
 }
+
+.start{
+    display: flex;
+    align-items: flex-start;
+    
+
+}
+
+.firstImg{
+
+    width: 100%;
+    height: 17em;
+}
+.asfalto{
+
+    width: 100%;
+    height: 25em;
+}
