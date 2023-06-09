@@ -56,12 +56,15 @@ export const Header = () => {
                 {dataUSerRdx.credentials.token.role === "client" && (
                   <>
                     <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
-                    <Nav.Link onClick={() => navigate("/")}>pepe</Nav.Link>
+                    <Nav.Link onClick={() => navigate("/profile")}>{dataUSerRdx.credentials.token.name}</Nav.Link>
                   </>
                 )}
 
                 {dataUSerRdx.credentials.token.role === "admin" && (
-                  <Nav.Link onClick={() => navigate("/")}>pepe</Nav.Link>
+                  <>
+                  <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
+                  <Nav.Link onClick={() => navigate("/profile")}>{dataUSerRdx.credentials.token.name}</Nav.Link>
+                  </>
                 )}
               </Nav>
               <Nav>

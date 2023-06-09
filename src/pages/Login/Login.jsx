@@ -43,7 +43,7 @@ export const Login = () => {
         bearer: resultado.data.token
       };
       dispatch(login({ credentials: datos }));
-       setMessage(`Bienvenido de nuevo mr.${decoded.name}`);
+       setMessage(`Welcome ${decoded.name}`);
       setTimeout(() => {
         navigate("/");
       }, 2750);
@@ -54,7 +54,7 @@ export const Login = () => {
   
   return (
     <div className='loginDesign'>
-      {message !== "" ? (<div>{message}</div>):(  <div><Form className='loginForm'>
+      {message !== "" ? (<div>{message}</div>):(<div><Form className='loginForm'>
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Email address</Form.Label>
       <Form.Control type="email" name='email' placeholder="Enter email" onChange={handlerLogin} />

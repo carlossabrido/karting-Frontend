@@ -4,8 +4,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-weight: bold;
 }
 
 .loginForm{
     width: 15em;
+}
+
+.message{
+    animation: slide-in 0.5s ease-out forwards;
+}
+
+@keyframes slide-in {
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
