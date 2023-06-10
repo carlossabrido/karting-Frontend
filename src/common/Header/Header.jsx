@@ -57,6 +57,7 @@ export const Header = () => {
                   <>
                     <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
                     <Nav.Link onClick={() => navigate("/profile")}>{dataUSerRdx.credentials.token.name}</Nav.Link>
+                    <Nav.Link onClick={() => navigate("/bookings")}>{dataUSerRdx.credentials.token.name}</Nav.Link>
                   </>
                 )}
 
@@ -65,7 +66,7 @@ export const Header = () => {
                   <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
                   <Nav.Link onClick={() => navigate("/profile")}>{dataUSerRdx.credentials.token.name}</Nav.Link>
                   <Nav.Link onClick={() => navigate("/adminProfiles")}>Profiles</Nav.Link>
-                  <Nav.Link onClick={() => navigate("/adminProfiles")}>pepe</Nav.Link>
+                  <Nav.Link onClick={() => navigate("/bookings")}>Bookings</Nav.Link>
                   </>
                 )}
               </Nav>

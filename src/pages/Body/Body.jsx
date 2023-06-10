@@ -6,6 +6,7 @@ import {Login} from '../Login/Login'
 import { Register } from '../Register/Register'
 import { Profile } from '../Profile/Profile'
 import { AdminProfiles } from '../adminProfiles/adminProfiles'
+import { Booking } from '../Bookings/Bookings'
 
 
 
@@ -18,7 +19,7 @@ export const Body = () => {
         <Route path='/register' element={<Register/>}/>
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/adminProfiles' element={<AdminProfiles/>}/>
-        
+        <Route path='/bookings' element={<Booking/>} />   
     </Routes>
   )
 }

@@ -42,5 +42,17 @@ export const bringAllProfiles=async(credentials,seek)=>{
       }   
 }
 
+export const bringBooking= async(credentials)=>{
+    try{
 
+    let config={
+        headers:{ 
+          Authorization: `Berarer ${credentials.bearer}`
+        }
+    }
+    const response= await axios.get(`http://localhost:7000/bookings`,config)
+    return response.data
+   }catch(error){console.log(error)}
+    
+}
  

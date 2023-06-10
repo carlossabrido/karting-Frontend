@@ -8,8 +8,11 @@
 .start{
     display: flex;
     align-items: flex-start;
-    
-
+}
+.box{
+    background-color: whitesmoke;
+    height: 5em;
+    width: 100%;
 }
 
 .firstImg{
