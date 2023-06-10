@@ -20,8 +20,18 @@
     width: 100%;
     height: 17em;
 }
+
+@media(max-width:720px){
+    .firstImg{
+        height: 8em;
+    }
+}
 .asfalto{
 
     width: 100%;
     height: 25em;
+}
+
+.carousel{
+    height: 400px;
 }

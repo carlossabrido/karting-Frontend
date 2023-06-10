@@ -18,7 +18,7 @@ export const Home = () => {
        {/* <img className='asfalto' src={Asfalto} alt="" /> */}
     </div>
     <div className='carousel'>
-    <CarouselItem>
+    <Carousel className='carousel'>
       <Carousel.Item>
         <img
           className="d-block w-100"
@@ -55,7 +55,7 @@ export const Home = () => {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
-    </CarouselItem>
+    </Carousel>
     </div> 
     </div>
   )
