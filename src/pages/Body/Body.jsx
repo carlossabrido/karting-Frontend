@@ -7,6 +7,7 @@ import { Register } from '../Register/Register'
 import { Profile } from '../Profile/Profile'
 import { AdminProfiles } from '../adminProfiles/adminProfiles'
 import { Booking } from '../Bookings/Bookings'
+import { NewBooking } from '../NewBooking/NewBooking'
 
 
 
@@ -19,7 +20,8 @@ export const Body = () => {
         <Route path='/register' element={<Register/>}/>
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/adminProfiles' element={<AdminProfiles/>}/>
-        <Route path='/bookings' element={<Booking/>} />   
+        <Route path='/bookings' element={<Booking/>} />  
+        <Route path='/newBooking' element={<NewBooking/>}/> 
     </Routes>
   )
 }
