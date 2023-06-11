@@ -2,8 +2,26 @@
     background: linear-gradient(to right, black, rgb(59, 56, 56));
     min-height: 88vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     color: white;
-    font-weight: bold;
+    font-weight: bold;  
+    flex-direction: column;
+}
+
+
+
+.pic{
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+    margin-top: 1em;
+}
+.pic:hover{
+   background-color: brown;
+   
+}
+
+.createForm{
+    margin-top: 3em;
 }
