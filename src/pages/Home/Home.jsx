@@ -1,11 +1,11 @@
 import React from 'react'
 import './Home.css'
 import { CarouselItem, Container, Row } from 'react-bootstrap'
-import Portada from './Media/portada3.png'
-import Circuit from './Media/circuito1.png'
-import Circuit2 from './Media/circuito2.png'
-import Circuit3 from './Media/circuito3.png'
-import Asfalto from './Media/asfalto.jpg'
+import Portada from '../Media/portada3.png'
+import Circuit from '../Media/circuito1.png'
+import Circuit2 from '../Media/circuito2.png'
+import Circuit3 from '../Media/circuito3.png'
+import Asfalto from '../Media/asfalto.jpg'
 import Carousel from 'react-bootstrap/Carousel';
 
 export const Home = () => {
