@@ -56,3 +56,17 @@ export const bringBooking= async(credentials)=>{
     
 }
  
+
+export const  createBooking= async(credentials)=>{
+    try{
+        let config={
+            headers:{
+                Authorization: `bearer ${credentials.bearer}`
+            }
+        }
+    }
+    catch(error){
+        console.log(error)
+    }
+
+}
