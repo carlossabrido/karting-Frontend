@@ -57,16 +57,21 @@ export const bringBooking= async(credentials)=>{
 }
  
 
-export const  createBooking= async(credentials)=>{
+export const  createBooking= async(credentials,body)=>{
+    console.log(credentials,'soy credentials')
+    console.log(body,'soy body')
     try{
         let config={
             headers:{
                 Authorization: `bearer ${credentials.bearer}`
             }
         }
+        const response= await axios.post(`http://localhost:7000/bookings`,body,config)
+    return response.data
     }
     catch(error){
         console.log(error)
     }
 
+    
 }
