@@ -13,6 +13,7 @@ import { useSelector } from 'react-redux'
 import { userData } from '../UserSlice'
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import moment from 'moment/moment'
 
 
 export const NewBooking = () => {
@@ -23,7 +24,6 @@ export const NewBooking = () => {
         type:"",
         start_date:"",
         start_time:"",
-        end_date:""
     })
     
     useEffect(()=>{
@@ -48,8 +48,15 @@ const handlerBooking= async(name,value)=>{
 
 const makeBooking= (e)=>{
     e.preventDefault();
-    const addDateHour= booking.start_date + 'T' + booking.start_time
-    const updateBooking={...booking, start_date:addDateHour}
+    const selectDate= moment(booking.start_date);
+    const selectTime=moment(booking.start_time,'HH:mm')
+    const adjustedDate = selectDate
+    .set('hour', selectTime.hours())
+    .set('minute', selectTime.minutes())
+    .set('second', 0);
+    const fixDate=adjustedDate.format('YYYY-MM-DD[T]HH:mm:ss.SSS[Z]')
+    const updateBooking={...booking, start_date:fixDate}
+
     createBooking(rdxData.credentials,updateBooking)
     .then((resultado)=>{
         console.log(resultado)
@@ -58,7 +65,6 @@ const makeBooking= (e)=>{
 }
 
     
-
   return (
     <div className='bookingDesign'>
         <div className='pictures'>
@@ -84,15 +90,10 @@ const makeBooking= (e)=>{
       </Form.Group>
       <Form.Group className="mb-3" controlId="formGroupEmail">
         <Form.Label></Form.Label>
-        <DropdownButton type="time" name="start_time" title="Dropdown button" onSelect={(value)=>{handlerBooking('start_time',value)}}>
+        <DropdownButton type="time" id="start_time" title="Dropdown button" onSelect={(value)=>{handlerBooking('start_time',value)}}>
             {hour.map((hour)=>(
-    
-      <Dropdown.Item key={hour.id} eventKey={hour}>{hour}</Dropdown.Item>))}
+      <Dropdown.Item  eventKey={hour}>{hour}</Dropdown.Item>))}
     </DropdownButton>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formGroupEmail">
-        <Form.Label></Form.Label>
-        <Form.Control type="datetime-local" name='end_date' placeholder="end date" onChange={(e)=>{handlerBooking('end_date', e.target.value)}}/>
       </Form.Group>
       <Button style={{backgroundColor : 'brown'}} variant="primary" type="submit" onClick={(e)=>makeBooking(e)}>
       Submit
