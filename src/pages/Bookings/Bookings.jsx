@@ -8,11 +8,8 @@ import { Col, Container, Row } from 'react-bootstrap'
 export const Booking = () => {
 
   const[bookings,setBookings]=useState([])
-  const[seek,setSeek]=useState("")
+  // const[seek,setSeek]=useState("")
   const dataRdx= useSelector(userData)
-  
-
-
 
 
   useEffect(()=>{
@@ -30,19 +27,19 @@ export const Booking = () => {
 
   return (
 
-    <div className='topScreen'>
-         <Container  className="topCol justify-content-center">
-        <Row>
-          <Col >
-            <input className='seekDesign'
-              type="text"
-              name="seek"
-              placeholder='search'
-              onChange={(e) => HandlerSeek(e)}
-            />
-          </Col>
-        </Row>
-      </Container>
+    // <div className='topScreen'>
+    //      <Container  className="topCol justify-content-center">
+    //     <Row>
+    //       <Col >
+    //         <input className='seekDesign'
+    //           type="text"
+    //           name="seek"
+    //           placeholder='search'
+    //           onChange={(e) => HandlerSeek(e)}
+    //         />
+    //       </Col>
+    //     </Row>
+    //   </Container>
     <div className='bookingDesign'>
       {dataRdx.credentials.token.role === 'client'? (<div className='containerBooking'>
         {bookings.map((booking)=>(
@@ -73,7 +70,7 @@ export const Booking = () => {
     
 
     </div>
-    </div>
+    // </div>
     
 
   )

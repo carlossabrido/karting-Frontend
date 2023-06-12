@@ -43,6 +43,7 @@ export const bringAllProfiles=async(credentials,seek)=>{
 }
 
 export const bringBooking= async(credentials)=>{
+    console.log(credentials,'soy credentials')
     try{
 
     let config={
