@@ -34,6 +34,7 @@ export const Header = () => {
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                   <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
+                  <Nav.Link onClick={() => navigate("/contact")}>Contact</Nav.Link>
                 </Nav>
                 <Nav>
                   <Nav.Link onClick={() => navigate("/login")}>Login</Nav.Link>
@@ -59,6 +60,7 @@ export const Header = () => {
                     <Nav.Link onClick={() => navigate("/profile")}>{dataUSerRdx.credentials.token.name}</Nav.Link>
                     <Nav.Link onClick={() => navigate("/bookings")}>Bookings</Nav.Link>
                     <Nav.Link onClick={() => navigate("/newBooking")}>NewBooking</Nav.Link>
+                    <Nav.Link onClick={() => navigate("/contact")}>Contact</Nav.Link>
                   </>
                 )}
 
@@ -69,6 +71,7 @@ export const Header = () => {
                   <Nav.Link onClick={() => navigate("/adminProfiles")}>Profiles</Nav.Link>
                   <Nav.Link onClick={() => navigate("/bookings")}>Bookings</Nav.Link>
                   <Nav.Link onClick={() => navigate("/newBooking")}>NewBooking</Nav.Link>
+                  <Nav.Link onClick={() => navigate("/contact")}>Contact</Nav.Link>
                   </>
                 )}
               </Nav>

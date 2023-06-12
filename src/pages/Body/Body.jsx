@@ -8,6 +8,7 @@ import { Profile } from '../Profile/Profile'
 import { AdminProfiles } from '../adminProfiles/adminProfiles'
 import { Booking } from '../Bookings/Bookings'
 import { NewBooking } from '../NewBooking/NewBooking'
+import { Contact } from '../Contact/Contact'
 
 
 
@@ -22,6 +23,7 @@ export const Body = () => {
         <Route path='/adminProfiles' element={<AdminProfiles/>}/>
         <Route path='/bookings' element={<Booking/>} />  
         <Route path='/newBooking' element={<NewBooking/>}/> 
+        <Route path='/contact' element={<Contact/>}/> 
     </Routes>
   )
 }
