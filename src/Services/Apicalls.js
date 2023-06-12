@@ -76,3 +76,30 @@ export const  createBooking= async(credentials,body)=>{
 
     
 }
+
+
+export const modifyBookingBack = async (credentials,id,body) => {
+    
+    try {
+      let config = {
+        headers: {
+          Authorization: `Bearer ${credentials.bearer}`
+          
+        },
+       
+      };
+      const response = await axios.put(
+        `http://localhost:9100/Appointment/${id}`,body,config
+      );
+      
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  export const getCircuit =async()=>{
+    const response=await axios.get(`http://localhost:7000/circuit`)
+    return response.data
+
+  }

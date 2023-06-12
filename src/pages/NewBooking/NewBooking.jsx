@@ -19,7 +19,7 @@ import moment from 'moment/moment'
 export const NewBooking = () => {
 
     const rdxData=useSelector(userData)
-    const[hour,setHour]=useState(["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00"])
+    const[hour,setHour]=useState(["11:00","12:00","13:00","16:00","17:00","18:00","19:00","20:00"])
     const[booking, setBooking]=useState({
         type:"",
         start_date:"",
