@@ -7,15 +7,18 @@ import Circuit2 from '../Media/circuito2.png'
 import Circuit3 from '../Media/circuito3.png'
 import Asfalto from '../Media/asfalto.jpg'
 import Carousel from 'react-bootstrap/Carousel';
+import { useNavigate } from 'react-router-dom'
 
 export const Home = () => {
+
+  const navigate=useNavigate()
   return (
     <div className='homeDesing'>
     <div className='start'>
        <img className='firstImg' src={Portada} alt="" />
     </div>
     <div className='box'>
-       {/* <img className='asfalto' src={Asfalto} alt="" /> */}
+       <div type="button" className='goToRegister' onClick={()=>navigate('/register')}><h1>Registrate aqui!!</h1> </div>
     </div>
     <div className='carousel'>
     <Carousel className='carousel'>
