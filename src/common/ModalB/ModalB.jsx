@@ -4,8 +4,11 @@ import { Dropdown, DropdownButton, Modal } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { userData } from "../../pages/UserSlice";
 import { getCircuit, modifyBookingBack } from "../../Services/Apicalls";
+import moment from "moment/moment";
 
-export const ModalB = ({ showModal, handleCloseModal, handleShowModal }) => {
+export const ModalB = ({ showModal, handleCloseModal, bookingId }) => {
+  
+  
   const rdxData = useSelector(userData);
   const [hour, setHour] = useState([
     "11:00",
@@ -18,8 +21,12 @@ export const ModalB = ({ showModal, handleCloseModal, handleShowModal }) => {
     "20:00",
   ]);
   const [idBooking, setIdBooking] = [{
-    
+    booking:bookingId
   }];
+
+  useEffect(()=>{
+    console.log(idBooking,'soy id booking')
+  },[])
 
   const [modifyBooking, setModifyBooking] = useState({
     type: "",
@@ -27,7 +34,7 @@ export const ModalB = ({ showModal, handleCloseModal, handleShowModal }) => {
     start_time: "",
   });
 
-  useEffect(() => console.log(modifyBooking));
+  
 
   const [circuit, setCircuit] = useState([]);
   const [selCircuit, setSelCircuit] = useState("");
@@ -35,7 +42,6 @@ export const ModalB = ({ showModal, handleCloseModal, handleShowModal }) => {
 
   useEffect(() => {
     getCircuit().then((resultado) => {
-      console.log(resultado, "soy circuito");
       setCircuit(resultado);
     });
   }, []);
@@ -60,7 +66,7 @@ export const ModalB = ({ showModal, handleCloseModal, handleShowModal }) => {
     setSelCircuit(circuitName);
   };
 
-  const editBooking = (e) => {
+  const editBooking = async (e) => {
     e.preventDefault();
     const selectDate = moment(modifyBooking.start_date);
     const selectTime = moment(modifyBooking.start_time, "HH:mm");
@@ -71,12 +77,17 @@ export const ModalB = ({ showModal, handleCloseModal, handleShowModal }) => {
     const fixDate = adjustedDate.format("YYYY-MM-DD[T]HH:mm:ss.SSS[Z]");
     const updateBooking = { ...modifyBooking, start_date: fixDate };
 
-    modifyBookingBack(rdxData.credentials, updateBooking)
+
+    console.log(modifyBookingBack,'que te doy')
+    try{
+      console.log(idBooking,'josete')
+    await modifyBookingBack(rdxData.credentials,idBooking.booking ,updateBooking)
       .then((resultado) => {
         console.log(resultado);
       })
-      .catch((error) => console.log(error));
-  };
+    }
+    catch(error){ console.log(error)};
+  }
 
   return (
     <div>
@@ -133,7 +144,7 @@ export const ModalB = ({ showModal, handleCloseModal, handleShowModal }) => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={() => editBooking}>
+          <Button variant="primary" onClick={editBooking}>
             Save Changes
           </Button>
         </Modal.Footer>

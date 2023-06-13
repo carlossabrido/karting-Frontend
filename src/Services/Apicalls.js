@@ -59,8 +59,7 @@ export const bringBooking= async(credentials)=>{
  
 
 export const  createBooking= async(credentials,body)=>{
-    console.log(credentials,'soy credentials')
-    console.log(body,'soy body')
+   
     try{
         let config={
             headers:{
@@ -79,6 +78,9 @@ export const  createBooking= async(credentials,body)=>{
 
 
 export const modifyBookingBack = async (credentials,id,body) => {
+    console.log(credentials,'olacredendial'),
+    console.log(id,'hola id')
+    console.log(body,'holabody')
     
     try {
       let config = {
@@ -89,7 +91,7 @@ export const modifyBookingBack = async (credentials,id,body) => {
        
       };
       const response = await axios.put(
-        `http://localhost:9100/Appointment/${id}`,body,config
+        `http://localhost:7000/bookings/${id}`,body,config
       );
       
       return response.data;
