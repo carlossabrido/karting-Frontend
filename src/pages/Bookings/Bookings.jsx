@@ -9,14 +9,6 @@ import { ModalB } from "../../common/ModalB/ModalB";
 
 export const Booking = () => {
  
-  const [showModal, setShowModal] = useState(false);
-
-  const handleShowModal=()=>{
-    setShowModal(true)
-  }
-  const handleCloseModal=()=>{
-    setShowModal(false)
-  }
   const [bookings, setBookings] = useState([]);
   // const[seek,setSeek]=useState("")
   const dataRdx = useSelector(userData);
@@ -29,6 +21,20 @@ export const Booking = () => {
       })
       .catch((error) => console.log(error));
   }, []);
+
+
+  const [showModal, setShowModal] = useState(false);
+  const[selectedBookingId, setSelectedBookingId]=useState(null)
+
+  const handleShowModal=(bookingID)=>{
+    setSelectedBookingId(bookingID)
+    setShowModal(true)
+  }
+  const handleCloseModal=()=>{
+    setSelectedBookingId(null)
+    setShowModal(false)
+  }
+  
 
   return (
     // <div className='topScreen'>
@@ -53,12 +59,13 @@ export const Booking = () => {
               <div>{booking.client.lastname}</div>
               <div>{booking.start_date}</div>
               <div>{booking.type.circuit}</div>
-              <div> <Button className="editButton" onClick={handleShowModal}>
+              <div> <Button className="editButton"  onClick={()=>handleShowModal(booking._id)}>
                   Edit
                 </Button>
                 <ModalB
                   showModal={showModal}
                   handleCloseModal={handleCloseModal}
+                  bookingId={selectedBookingId}
                 /></div>
             </div>
           ))}
@@ -73,12 +80,13 @@ export const Booking = () => {
               <Col>{booking.start_date}</Col>
               <Col>{booking.type.circuit}</Col>
               <Col>
-              <Button className="editButton" onClick={handleShowModal}>
+              <Button className="editButton" onClick={()=>handleShowModal(booking._id)}>
                   Edit
                 </Button>
                 <ModalB
                   showModal={showModal}
                   handleCloseModal={handleCloseModal}
+                  bookingId={selectedBookingId}
                 />
                
                 
