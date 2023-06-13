@@ -13,9 +13,7 @@ export const Booking = () => {
   // const[seek,setSeek]=useState("")
   const dataRdx = useSelector(userData);
 
-  useEffect(()=>{
-    console.log(bookings,'soy bookinf')
-  },[])
+  
 
   useEffect(() => {
     bringBooking(dataRdx.credentials)
@@ -39,6 +37,14 @@ export const Booking = () => {
   const handleCloseModal=()=>{
     setSelectedBookingId(null)
     setShowModal(false)
+  }
+
+  // update booking 
+  const updateBooking=()=>{
+  bringBooking(dataRdx.credentials)
+      .then((resultado)=>
+      setBookings(resultado))
+      .catch((error)=>console.log(error))
   }
   
 
@@ -72,12 +78,13 @@ export const Booking = () => {
                   showModal={showModal}
                   handleCloseModal={handleCloseModal}
                   bookingId={selectedBookingId}
+                  reloadBooking={updateBooking}
                 /></div>
             </div>
           ))}
         </div>
       ) : (
-        <Container>
+        <Container className="mt">
           {bookings.map((booking) => (
             <Row className="table" key={booking.id}>
               <Col>{booking.client.name}</Col>
@@ -87,15 +94,16 @@ export const Booking = () => {
               <Col>{booking.type.circuit}</Col>
               <Col>
               <Button className="editButton" onClick={()=>handleShowModal(booking._id)}>
-                  Edit
+                  
                 </Button>
-                {selectedBookingId &&(
+                
                 <ModalB
                   showModal={showModal}
                   handleCloseModal={handleCloseModal}
                   bookingId={selectedBookingId}
+                  reloadBooking={updateBooking}
                 />
-               ) }
+               
                 
               </Col>
             </Row>

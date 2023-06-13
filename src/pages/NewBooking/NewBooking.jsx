@@ -14,9 +14,11 @@ import { userData } from '../UserSlice'
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import moment from 'moment/moment'
+import { useNavigate } from 'react-router-dom'
 
 
 export const NewBooking = () => {
+    const navigate=useNavigate()
 
     const rdxData=useSelector(userData)
     const[hour,setHour]=useState(["11:00","12:00","13:00","16:00","17:00","18:00","19:00","20:00"])
@@ -25,16 +27,19 @@ export const NewBooking = () => {
         start_date:"",
         start_time:"",
     })
-    
-    useEffect(()=>{
-        console.log(booking)
-    })
 
+    const[selectHour,setSelectHour]=useState("")
+    const[selectCircuit,setSelectCircuit]=useState("")
+
+    
+   
 const handlerType = async(id)=>{
     setBooking((prevState)=>({
         ...prevState,
         type:id
     }))
+    setSelectCircuit(id)
+
 }
 
 
@@ -43,6 +48,7 @@ const handlerBooking= async(name,value)=>{
         ...prevState,
     [name]: value,
     }) )
+    setSelectHour(value)
 
 }
 
@@ -60,6 +66,7 @@ const makeBooking= (e)=>{
     createBooking(rdxData.credentials,updateBooking)
     .then((resultado)=>{
         console.log(resultado)
+        navigate('/bookings')
     })
     .catch((error)=>console.log(error))
 }
@@ -71,10 +78,10 @@ const makeBooking= (e)=>{
         <Container>
       <Row>  
         <Col xs={6} md={4}>
-          <Image src={cirtuito1} rounded className='pic' name="type" onClick={()=>handlerType("647ef651d1ce20e22cf8199f")}  />
+          <Image src={cirtuito1} rounded className={ `pic ${selectCircuit ==="647ef651d1ce20e22cf8199f" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("647ef651d1ce20e22cf8199f")}  />
         </Col>  
         <Col xs={6} md={4}>
-        <Image src={cirtuito2} rounded className='pic' name="type" onClick={()=>handlerType("647f746e27366c363c97f14c")} />
+        <Image src={cirtuito2} rounded className={ `pic ${selectCircuit ==="647f746e27366c363c97f14c" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("647f746e27366c363c97f14c")} />
         </Col>  
         <Col xs={6} md={4}>
         <Image src={cirtuito3} rounded className='pic'/>
@@ -90,7 +97,7 @@ const makeBooking= (e)=>{
       </Form.Group>
       <Form.Group className="mb-3" controlId="formGroupEmail">
         <Form.Label></Form.Label>
-        <DropdownButton type="time" id="start_time" title="Dropdown button" onSelect={(value)=>{handlerBooking('start_time',value)}}>
+        <DropdownButton  type="time" id="start_time" title={selectHour?selectHour:"Time"} onSelect={(value)=>{handlerBooking('start_time',value)}}>
             {hour.map((hour)=>(
       <Dropdown.Item  eventKey={hour}>{hour}</Dropdown.Item>))}
     </DropdownButton>

@@ -3,11 +3,10 @@ import Button from "react-bootstrap/Button";
 import { Dropdown, DropdownButton, Modal } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { userData } from "../../pages/UserSlice";
-import { getCircuit, modifyBookingBack } from "../../Services/Apicalls";
+import { bringBooking, getCircuit, modifyBookingBack } from "../../Services/Apicalls";
 import moment from "moment/moment";
 
-export const ModalB = ({ showModal, handleCloseModal, bookingId }) => {
-  
+export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }) => {
   
   const rdxData = useSelector(userData);
   const [hour, setHour] = useState([
@@ -24,9 +23,6 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId }) => {
     booking:bookingId
   }];
 
-  useEffect(()=>{
-    console.log(idBooking,'soy id booking')
-  },[])
 
   const [modifyBooking, setModifyBooking] = useState({
     type: "",
@@ -50,6 +46,8 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId }) => {
     handleCloseModal();
   };
 
+  
+
   const handlerModifyBooking = async (name, value) => {
     setModifyBooking((prevState) => ({
       ...prevState,
@@ -65,6 +63,8 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId }) => {
     }));
     setSelCircuit(circuitName);
   };
+
+ 
 
   const editBooking = async (e) => {
     e.preventDefault();
@@ -85,6 +85,8 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId }) => {
       .then((resultado) => {
         console.log(resultado);
       })
+      reloadBooking()
+      handleClose()
     }
     catch(error){ console.log(error)};
   }

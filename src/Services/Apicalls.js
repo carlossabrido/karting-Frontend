@@ -23,7 +23,7 @@ export const bringProfile=async(credentials)=>{
 }
 
 export const bringAllProfiles=async(credentials,seek)=>{
-    console.log(credentials,'spy un duro')
+    
     try{
         let config={
             headers:{
