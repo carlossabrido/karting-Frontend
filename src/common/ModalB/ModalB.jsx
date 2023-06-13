@@ -63,6 +63,13 @@ export const ModalB = ({showModal, handleCloseModal, handleShowModal}) => {
         <Modal.Title>Modal heading</Modal.Title>
       </Modal.Header>
       <Modal.Body>
+      <DropdownButton type="text" id="type" title="Dropdown button" onSelect={(value)=>{handlerModifyBooking('circuit',value)}}>
+{circuit.map((circuit)=>(
+<Dropdown.Item  Key={circuit.id}>{circuit.circuit}</Dropdown.Item>))}
+</DropdownButton>
+    
+      </Modal.Body>
+      <Modal.Body>
      <input  type="date" name='start_date' placeholder="start date" onChange={(e)=>{handlerModifyBooking('start_date',e.target.value)}} />
       </Modal.Body>
       <Modal.Body>
