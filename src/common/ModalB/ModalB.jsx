@@ -55,6 +55,8 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
     }));
     setSelHour(value);
   };
+
+  
   const handlerModifyBookingcircuit = async (e, circuitId, circuitName) => {
     e.preventDefault();
     setModifyBooking((prevState) => ({

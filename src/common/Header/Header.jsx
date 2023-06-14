@@ -35,6 +35,7 @@ export const Header = () => {
                 <Nav className="me-auto">
                   <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
                   <Nav.Link onClick={() => navigate("/contact")}>Contact</Nav.Link>
+                  <Nav.Link onClick={() => navigate("/review")}>Opinions</Nav.Link>
                 </Nav>
                 <Nav>
                   <Nav.Link onClick={() => navigate("/login")}>Login</Nav.Link>
@@ -61,6 +62,7 @@ export const Header = () => {
                     <Nav.Link onClick={() => navigate("/bookings")}>Bookings</Nav.Link>
                     <Nav.Link onClick={() => navigate("/newBooking")}>NewBooking</Nav.Link>
                     <Nav.Link onClick={() => navigate("/contact")}>Contact</Nav.Link>
+                    <Nav.Link onClick={() => navigate("/review")}>Opinions</Nav.Link>
                   </>
                 )}
 
@@ -72,6 +74,7 @@ export const Header = () => {
                   <Nav.Link onClick={() => navigate("/bookings")}>Bookings</Nav.Link>
                   <Nav.Link onClick={() => navigate("/newBooking")}>NewBooking</Nav.Link>
                   <Nav.Link onClick={() => navigate("/contact")}>Contact</Nav.Link>
+                  <Nav.Link onClick={() => navigate("/review")}>Opinions</Nav.Link>
                   </>
                 )}
               </Nav>

@@ -9,6 +9,7 @@ import { AdminProfiles } from '../adminProfiles/adminProfiles'
 import { Booking } from '../Bookings/Bookings'
 import { NewBooking } from '../NewBooking/NewBooking'
 import { Contact } from '../Contact/Contact'
+import { Opinions } from '../Opinions/Opinions'
 
 
 
@@ -24,6 +25,9 @@ export const Body = () => {
         <Route path='/bookings' element={<Booking/>} />  
         <Route path='/newBooking' element={<NewBooking/>}/> 
         <Route path='/contact' element={<Contact/>}/> 
+        <Route path='/reviews' element={<Opinions/>}/> 
     </Routes>
   )
 }
+
+
