@@ -5,7 +5,7 @@ import Portada from '../Media/portada3.png'
 import Circuit from '../Media/circuito1.png'
 import Circuit2 from '../Media/circuito2.png'
 import Circuit3 from '../Media/circuito3.png'
-import Asfalto from '../Media/asfalto.jpg'
+import Parrilla from '../Media/parrilla.png'
 import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from 'react-router-dom'
 
@@ -19,6 +19,12 @@ export const Home = () => {
     </div>
     <div className='box'>
        <div type="button" className='goToRegister' onClick={()=>navigate('/register')}><h1>Registrate aqui!!</h1> </div>
+    </div>
+    <div className='routes'>
+
+      <img className='pepe' src={Parrilla} alt="" onClick={()=>navigate('/reviews')} />
+      <img className='pepe' src={Parrilla} alt="" onClick={()=>navigate('/contact')}/>
+
     </div>
     <div className='carousel'>
     <Carousel className='carousel'>

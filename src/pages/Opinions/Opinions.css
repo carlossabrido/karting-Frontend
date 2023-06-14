@@ -1,0 +1,29 @@
+.opinionDesign{
+    background: linear-gradient(to right, black, rgb(59, 56, 56));
+    min-height: 88vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    flex-direction: column;
+    
+}
+
+/* .imgFeedback{} */
+/* .boxReview{
+    width: 20em;
+    height: 5em;
+    background-color: brown;
+    flex-direction: column;
+} */
+
+.reviewsDesing{
+    justify-content: center;
+}
+
+.button{
+    width: 2em;
+    height: 2em;
+    background-color: aqua;
+}

@@ -49,19 +49,7 @@ export const Booking = () => {
   
 
   return (
-    // <div className='topScreen'>
-    //      <Container  className="topCol justify-content-center">
-    //     <Row>
-    //       <Col >
-    //         <input className='seekDesign'
-    //           type="text"
-    //           name="seek"
-    //           placeholder='search'
-    //           onChange={(e) => HandlerSeek(e)}
-    //         />
-    //       </Col>
-    //     </Row>
-    //   </Container>
+ 
     <div className="bookingDesign">
       {dataRdx.credentials.token.role === "client" ? (
         <div className="containerBooking">

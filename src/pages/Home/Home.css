@@ -18,6 +18,28 @@
     align-items: center;
 }
 
+.routes{
+    background-color: rgb(153, 200, 104);
+    height: 20em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pepe{
+    width: 30%;
+    height: 70%;
+    margin: 1em;
+}
+
+.pepe:hover{
+   filter: brightness(60%);
+   
+}
+
+
 .goToRegister{
     background-color: brown;
     height: 4em;
