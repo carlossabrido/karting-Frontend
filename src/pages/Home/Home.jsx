@@ -5,7 +5,9 @@ import Portada from '../Media/portada3.png'
 import Circuit from '../Media/circuito1.png'
 import Circuit2 from '../Media/circuito2.png'
 import Circuit3 from '../Media/circuito3.png'
-import Parrilla from '../Media/parrilla.png'
+import Parrilla from '../Media/kart2l.jpg'
+import kart from '../Media/kart4.jpg'
+import kart2 from '../Media/KARTING3.jpg'
 import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from 'react-router-dom'
 
@@ -22,8 +24,8 @@ export const Home = () => {
     </div>
     <div className='routes'>
 
-      <img className='pepe' src={Parrilla} alt="" onClick={()=>navigate('/reviews')} />
-      <img className='pepe' src={Parrilla} alt="" onClick={()=>navigate('/contact')}/>
+      <img className='pepe' src={kart} alt="" onClick={()=>navigate('/reviews')} />
+      <img className='pepe' src={kart2} alt="" onClick={()=>navigate('/contact')}/>
 
     </div>
     <div className='carousel'>

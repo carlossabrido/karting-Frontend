@@ -19,7 +19,7 @@
 }
 
 .routes{
-    background-color: rgb(153, 200, 104);
+    background: linear-gradient(to right, black, rgb(59, 56, 56));
     height: 20em;
     width: 100%;
     display: flex;
@@ -29,13 +29,16 @@
 }
 
 .pepe{
-    width: 30%;
+    width: 20%;
     height: 70%;
     margin: 1em;
+    transition: transform 0.3s ease;
+    /* border-radius: 50% 0 0 0; */
 }
 
 .pepe:hover{
    filter: brightness(60%);
+   transform: scale(1.2);
    
 }
 

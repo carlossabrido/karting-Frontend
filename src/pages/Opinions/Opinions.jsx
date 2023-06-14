@@ -46,6 +46,7 @@ import { useNavigate } from "react-router-dom";
 
     return (
         <div className="opinionDesign">
+            {dataRdx.credentials.token &&(
         <div className="createReview">
             <Button variant="primary" onClick={handleShow}>
             Launch demo modal
@@ -70,23 +71,20 @@ import { useNavigate } from "react-router-dom";
             </Modal.Footer>
             </Modal>
       </div>
+      )}
       <div className="row justify-content-center align-items-center">
       {review.map((review)=>(
         <div className="col-md-3 m-3" key={review.id}>
           <Card style={{ width: "18rem" }}>
             
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>{review.tittle}</Card.Title>
              
               <Card.Subtitle className="mb-2 text-muted" >
                 {review.opinion}
               </Card.Subtitle>
-             
               <Card.Text>
-                
               </Card.Text>
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
             </Card.Body>
           </Card>
         </div>
