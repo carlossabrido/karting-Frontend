@@ -4,6 +4,7 @@ import { userData } from '../UserSlice'
 import { useSelector } from 'react-redux'
 import { bringAllProfiles, deleteProfile } from '../../Services/Apicalls'
 import { Col, Container, Row } from 'react-bootstrap'
+import Button from 'react-bootstrap/Button';
 
 
 export const AdminProfiles = () => {
@@ -95,7 +96,10 @@ const updateProfiles = () => {
                     <Col>{profile.email}</Col>
                     <Col>{profile.phone_number}</Col>
                     <Col>{profile.role}</Col>
-                    <Col><button className='deleteButton' onClick={()=>removeProfile(profile._id)}></button></Col>
+                    <Col>  <Button variant="danger" className='deleteButton' onClick={()=>removeProfile(profile._id)}>Primary</Button>{' '}
+         
+                    
+                    </Col>
                 </Row>
             ))}
      </Container>

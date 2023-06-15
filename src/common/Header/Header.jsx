@@ -73,6 +73,7 @@ export const Header = () => {
                   <Nav.Link onClick={() => navigate("/adminProfiles")}>Profiles</Nav.Link>
                   <Nav.Link onClick={() => navigate("/bookings")}>Bookings</Nav.Link>
                   <Nav.Link onClick={() => navigate("/newBooking")}>NewBooking</Nav.Link>
+                  <Nav.Link onClick={() => navigate("/createAdmin")}>CreateAdmin</Nav.Link>
                   <Nav.Link onClick={() => navigate("/contact")}>Contact</Nav.Link>
                   <Nav.Link onClick={() => navigate("/reviews")}>Opinions</Nav.Link>
                   </>

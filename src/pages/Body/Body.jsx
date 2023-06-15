@@ -5,11 +5,12 @@ import { Home } from '../Home/Home'
 import {Login} from '../Login/Login'
 import { Register } from '../Register/Register'
 import { Profile } from '../Profile/Profile'
-import { AdminProfiles } from '../adminProfiles/adminProfiles'
 import { Booking } from '../Bookings/Bookings'
 import { NewBooking } from '../NewBooking/NewBooking'
 import { Contact } from '../Contact/Contact'
 import { Opinions } from '../Opinions/Opinions'
+import { CreateAdmin } from '../CreateAdmin/CreateAdmin'
+import { AdminProfiles } from '../AdminProfiles/AdminProfiles'
 
 
 
@@ -26,6 +27,7 @@ export const Body = () => {
         <Route path='/newBooking' element={<NewBooking/>}/> 
         <Route path='/contact' element={<Contact/>}/> 
         <Route path='/reviews' element={<Opinions/>}/> 
+        <Route path='/createAdmin' element={<CreateAdmin/>}/> 
     </Routes>
   )
 }

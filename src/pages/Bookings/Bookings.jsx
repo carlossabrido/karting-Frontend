@@ -96,10 +96,10 @@ export const Booking = () => {
                 >
                 
                 </Button>
-                <Button
+                <Button variant="danger"
                   className="deleteButtton"
                   onClick={() => deleteBooking(booking._id)}
-                ></Button>
+                ></Button>{''}
 
                 <ModalB
                   showModal={showModal}
