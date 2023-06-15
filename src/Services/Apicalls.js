@@ -99,10 +99,10 @@ export const modifyBookingBack = async (credentials,id,body) => {
       console.log(error);
     }
   };
-export const deleteBookingBack = async (credentials,id,body) => {
+export const deleteBookingBack = async (credentials,id) => {
     console.log(credentials,'olacredendial'),
     console.log(id,'hola id')
-    console.log(body,'holabody')
+    
     
     try {
       let config = {
@@ -113,7 +113,7 @@ export const deleteBookingBack = async (credentials,id,body) => {
        
       };
       const response = await axios.delete(
-        `http://localhost:7000/bookings/${id}`,body,config
+        `http://localhost:7000/bookings/${id}`,config
       );
       
       

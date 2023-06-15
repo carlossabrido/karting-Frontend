@@ -93,31 +93,8 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
     catch(error){ console.log(error)};
   }
 
-// delete booking function 
 
-  const deleteBooking = async (e) => {
-    e.preventDefault()
-    
-    const selectDate = moment(modifyBooking.start_date);
-    const selectTime = moment(modifyBooking.start_time, "HH:mm");
-    const adjustedDate = selectDate
-      .set("hour", selectTime.hours())
-      .set("minute", selectTime.minutes())
-      .set("second", 0);
-    const fixDate = adjustedDate.format("YYYY-MM-DD[T]HH:mm:ss.SSS[Z]");
-    const updateBooking = { ...modifyBooking, start_date: fixDate };
-
-    try{
-    await deleteBookingBack(rdxData.credentials,idBooking.booking ,updateBooking)
-      .then((resultado) => {
-        console.log(resultado,'eliminado');
-      })
-      reloadBooking()
-      handleClose()
-    }
-    catch(error){ console.log(error)};
-  }
-
+  
   return (
     <div>
       <Modal show={showModal} onHide={handleClose}>
@@ -172,9 +149,6 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
-          </Button>
-          <Button  variant="primary" onClick={deleteBooking}>
-            delete
           </Button>
           <Button variant="primary" onClick={editBooking}>
             Save Changes

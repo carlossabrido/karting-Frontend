@@ -10,7 +10,7 @@
 
 .mt{
     margin-top: 5em;
-    background-color: brown;
+    
   
 }
 
@@ -20,4 +20,9 @@
     justify-content: center;
     align-items: center;
     background-color: brown;
+}
+
+.deleteButtton{
+    background-color: azure;
+    color: blueviolet;
 }

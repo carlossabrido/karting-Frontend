@@ -2,18 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./Bookings.css";
 import { useSelector } from "react-redux";
 import { userData } from "../UserSlice";
-import { bringBooking } from "../../Services/Apicalls";
+import { bringBooking, deleteBookingBack } from "../../Services/Apicalls";
 import { Col, Container, Row } from "react-bootstrap";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 import { ModalB } from "../../common/ModalB/ModalB";
 
 export const Booking = () => {
- 
   const [bookings, setBookings] = useState([]);
   // const[seek,setSeek]=useState("")
   const dataRdx = useSelector(userData);
-
-  
 
   useEffect(() => {
     bringBooking(dataRdx.credentials)
@@ -24,32 +21,41 @@ export const Booking = () => {
       .catch((error) => console.log(error));
   }, []);
 
-
   const [showModal, setShowModal] = useState(false);
-  const[selectedBookingId, setSelectedBookingId]=useState(null)
-  
+  const [selectedBookingId, setSelectedBookingId] = useState(null);
 
-  const handleShowModal=(bookingID)=>{
-    console.log("Booking ID:", bookingID)
-    setSelectedBookingId(bookingID)
-    setShowModal(true)
-  }
-  const handleCloseModal=()=>{
-    setSelectedBookingId(null)
-    setShowModal(false)
-  }
+  const handleShowModal = (bookingID) => {
+    console.log("Booking ID:", bookingID);
+    setSelectedBookingId(bookingID);
+    setShowModal(true);
+  };
+  const handleCloseModal = () => {
+    setSelectedBookingId(null);
+    setShowModal(false);
+  };
 
-  // update booking 
-  const updateBooking=()=>{
-  bringBooking(dataRdx.credentials)
-      .then((resultado)=>
-      setBookings(resultado))
-      .catch((error)=>console.log(error))
-  }
-  
+  // update booking
+  const updateBooking = () => {
+    bringBooking(dataRdx.credentials)
+      .then((resultado) => setBookings(resultado))
+      .catch((error) => console.log(error));
+  };
+
+  // delete booking function
+
+  const deleteBooking = async (bookingID) => {
+    try {
+      await deleteBookingBack(dataRdx.credentials, bookingID).then(
+        (resultado) => {
+          console.log(resultado, "eliminado");
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
- 
     <div className="bookingDesign">
       {dataRdx.credentials.token.role === "client" ? (
         <div className="containerBooking">
@@ -59,7 +65,9 @@ export const Booking = () => {
               <div>{booking._id}</div>
               <div>{booking.start_date}</div>
               <div>{booking.type.circuit}</div>
-              <div> <Button className="editButton"  onClick={()=>handleShowModal(booking._id)}>
+              <div>
+                {" "}
+                <Button className="editButton" onClick={() => booking._id}>
                   Edit
                 </Button>
                 <ModalB
@@ -67,7 +75,8 @@ export const Booking = () => {
                   handleCloseModal={handleCloseModal}
                   bookingId={selectedBookingId}
                   reloadBooking={updateBooking}
-                /></div>
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -81,18 +90,23 @@ export const Booking = () => {
               <Col>{booking.start_date}</Col>
               <Col>{booking.type.circuit}</Col>
               <Col>
-              <Button className="editButton" onClick={()=>handleShowModal(booking._id)}>
-                  
-                </Button>
+                <Button
+                  className="editButton m-1"
+                  onClick={() => handleShowModal(booking._id)}
+                >
                 
+                </Button>
+                <Button
+                  className="deleteButtton"
+                  onClick={() => deleteBooking(booking._id)}
+                ></Button>
+
                 <ModalB
                   showModal={showModal}
                   handleCloseModal={handleCloseModal}
                   bookingId={selectedBookingId}
                   reloadBooking={updateBooking}
                 />
-               
-                
               </Col>
             </Row>
           ))}
