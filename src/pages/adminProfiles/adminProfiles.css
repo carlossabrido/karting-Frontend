@@ -32,3 +32,11 @@
     background-color: rgb(202, 43, 43);
     border: solid white;
 }
+
+
+.deleteButton{
+    height: 1em;
+    width: 1em;
+    background-color: brown;
+    
+}

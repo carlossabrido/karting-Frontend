@@ -61,7 +61,7 @@ const handlerHerror=(e)=>{
   }
 
   const registerMeFunction = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     registerMe(registration)
       .then(navigate('/login'))
       .catch((error) => console.error(error));

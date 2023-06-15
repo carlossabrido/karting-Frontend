@@ -42,6 +42,24 @@ export const bringAllProfiles = async (credentials, seek) => {
   }
 };
 
+export const deleteProfile = async (credentials, id) => {
+  try {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${credentials.bearer}`,
+      },
+    };
+    const response = await axios.delete(
+      `http://localhost:7000/user/${id}`,
+      config
+    );
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const bringBooking = async (credentials) => {
   console.log(credentials, "soy credentials");
   try {
@@ -98,7 +116,7 @@ export const modifyBookingBack = async (credentials, id, body) => {
   }
 };
 export const deleteBookingBack = async (credentials, id) => {
-  console.log(credentials, "olacredendial"), console.log(id, "hola id");
+  // console.log(credentials, "olacredendial"), console.log(id, "hola id");
 
   try {
     let config = {
@@ -107,8 +125,7 @@ export const deleteBookingBack = async (credentials, id) => {
       },
     };
     const response = await axios.delete(
-      `http://localhost:7000/bookings/${id}`,
-      config
+      `http://localhost:7000/bookings/${id}`,config
     );
 
     return response.data;
@@ -127,8 +144,6 @@ export const getOpinion = async () => {
 };
 
 export const createReview = async (credentials, body) => {
-  console.log(credentials.bearer, "eo");
-
   try {
     let config = {
       headers: {
@@ -136,10 +151,9 @@ export const createReview = async (credentials, body) => {
       },
     };
 
-    console.log(body, "soybody");
     const response = await axios.post(
       `http://localhost:7000/opinion`,
-       body ,
+      body,
       config
     );
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './AdminProfiles.css'
 import { userData } from '../UserSlice'
 import { useSelector } from 'react-redux'
-import { bringAllProfiles } from '../../Services/Apicalls'
+import { bringAllProfiles, deleteProfile } from '../../Services/Apicalls'
 import { Col, Container, Row } from 'react-bootstrap'
 
 
@@ -52,6 +52,22 @@ export const AdminProfiles = () => {
         .catch((error)=>console.log(error))
     },[])
 
+// update Profiles
+const updateProfiles = () => {
+  bringAllProfiles(rdxData.credentials)
+    .then((resultado) => setProfiles(resultado))
+    .catch((error) => console.log(error));
+};
+
+
+
+    const removeProfile=async(profileId)=>{
+      console.log(profileId,'no me jodas')
+     await deleteProfile(rdxData.credentials,profileId)
+      .then((resultado)=>console.log(resultado,'estoy bien'))
+      updateProfiles()
+      .catch((error)=>console.log(error))
+    }
 
 
   return (
@@ -79,6 +95,7 @@ export const AdminProfiles = () => {
                     <Col>{profile.email}</Col>
                     <Col>{profile.phone_number}</Col>
                     <Col>{profile.role}</Col>
+                    <Col><button className='deleteButton' onClick={()=>removeProfile(profile._id)}></button></Col>
                 </Row>
             ))}
      </Container>
