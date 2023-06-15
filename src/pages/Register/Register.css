@@ -9,3 +9,6 @@
 .registerForm{
     width: 15em;
 }
+.error{
+    color: white;
+}

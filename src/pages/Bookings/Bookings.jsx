@@ -45,11 +45,11 @@ export const Booking = () => {
 
   const deleteBooking = async (bookingID) => {
     try {
-      await deleteBookingBack(dataRdx.credentials, bookingID).then(
+      await deleteBookingBack(dataRdx.credentials, bookingID)
+      .then(
         (resultado) => {
-          console.log(resultado, "eliminado");
-        }
-      );
+          console.log(resultado, "eliminado")} );
+        updateBooking()
     } catch (error) {
       console.log(error);
     }

@@ -1,6 +1,6 @@
 .bookingDesign{
     background: linear-gradient(to right, black, rgb(59, 56, 56));
-    min-height: 125vh;
+    min-height: 93vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -38,4 +38,8 @@
 
 .buttonColor{
     background-color: brown;
+}
+
+.letterColor{
+    color: brown;
 }

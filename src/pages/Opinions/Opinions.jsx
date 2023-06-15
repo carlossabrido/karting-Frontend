@@ -8,6 +8,7 @@
     import { useSelector } from "react-redux";
     import { userData } from "../UserSlice";
 import { useNavigate } from "react-router-dom";
+import { Prev } from "react-bootstrap/esm/PageItem";
 
     export const Opinions = () => {
     const dataRdx = useSelector(userData);
@@ -17,6 +18,7 @@ import { useNavigate } from "react-router-dom";
     const navigate= useNavigate()
 
     const[opinion,setOpinion]=useState({
+        tittle:"",
         opinion:""
     })
 
@@ -27,7 +29,12 @@ import { useNavigate } from "react-router-dom";
     useEffect(()=>{console.log(opinion)})
 
     const handlerOpinion=(e)=>{
-        setOpinion(e.target.value)
+
+        setOpinion((prevState)=>({
+            ...prevState,
+            [e.target.name] : e.target.value
+          } ))
+          
 
     }
 
@@ -55,7 +62,7 @@ import { useNavigate } from "react-router-dom";
             <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>
-                {/* <input type="text" placeholder="Review Tittle" /> */}
+                <input type="text" name='tittle' placeholder="Review Tittle" onChange={handlerOpinion} />
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>

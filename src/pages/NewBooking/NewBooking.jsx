@@ -77,14 +77,14 @@ const makeBooking= (e)=>{
         <div className='pictures'>
         <Container>
       <Row>  
-        <Col xs={6} md={4}>
-          <Image src={cirtuito1} rounded className={ `pic ${selectCircuit ==="647ef651d1ce20e22cf8199f" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("647ef651d1ce20e22cf8199f")}  />
+        <Col  xs={6} md={4}>
+          <Image src={cirtuito1} rounded className={ `pic ${selectCircuit ==="647ef651d1ce20e22cf8199f" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("647ef651d1ce20e22cf8199f")}  />Baku
         </Col>  
         <Col xs={6} md={4}>
-        <Image src={cirtuito2} rounded className={ `pic ${selectCircuit ==="647f746e27366c363c97f14c" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("647f746e27366c363c97f14c")} />
+        <Image src={cirtuito2} rounded className={ `pic ${selectCircuit ==="648ad9ddd45db60796f12567" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("648ad9ddd45db60796f12567")} />Silverstone
         </Col>  
         <Col xs={6} md={4}>
-        <Image src={cirtuito3} rounded className='pic'/>
+        <Image src={cirtuito3} rounded className={ `pic ${selectCircuit ==="648ad8ed0253162e078ec873" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("648ad8ed0253162e078ec873")}/>Barein
         </Col>
       </Row>
     </Container>   
