@@ -70,7 +70,7 @@ export const Header = () => {
                   <>
                   <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
                   <Nav.Link onClick={() => navigate("/profile")}>{dataUSerRdx.credentials.token.name}</Nav.Link>
-                  <Nav.Link onClick={() => navigate("/adminProfiles")}>Profiles</Nav.Link>
+                  <Nav.Link onClick={() => navigate("/adminprofiles")}>Profiles</Nav.Link>
                   <Nav.Link onClick={() => navigate("/bookings")}>Bookings</Nav.Link>
                   <Nav.Link onClick={() => navigate("/newBooking")}>NewBooking</Nav.Link>
                   <Nav.Link onClick={() => navigate("/createAdmin")}>CreateAdmin</Nav.Link>

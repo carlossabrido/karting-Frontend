@@ -13,10 +13,6 @@ import { Opinions } from '../Opinions/Opinions'
 import { CreateAdmin } from '../CreateAdmin/CreateAdmin'
 
 
-
-
-
-
 export const Body = () => {
   return (
     <Routes>
@@ -24,7 +20,7 @@ export const Body = () => {
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/profile' element={<Profile/>}/>
-        <Route path='/adminProfiles' element={<AdminProfiles/>}/>
+        <Route path='/adminprofiles' element={<AdminProfiles/>}/>
         <Route path='/bookings' element={<Booking/>} />  
         <Route path='/newBooking' element={<NewBooking/>}/> 
         <Route path='/contact' element={<Contact/>}/> 
