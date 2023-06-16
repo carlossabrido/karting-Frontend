@@ -39,7 +39,7 @@ const handlerHerror=(e)=>{
   if(!registration.phone_number){
     alertError.phone_number="phone number error"
   }
-  if(!registration.password){
+  if(!registration.password || registration.password.length < 6){
     alertError.password="password error"
   }
 

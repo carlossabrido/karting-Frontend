@@ -20,11 +20,7 @@ export const Login = () => {
 
   const [message,setMessage]=useState("")
 
-  // useEffect(() => {
-  //   if (dataRdx.credentials.token) {
-  //     navigate();
-  //   }
-  // }, []);
+ 
   
   const handlerLogin=(e)=>{
     setCredentials((prevState)=>({

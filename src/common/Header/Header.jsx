@@ -23,7 +23,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="navDesing">
+    <div className="color">
       {!dataUSerRdx?.credentials?.token ? (
         <div>
           {" "}

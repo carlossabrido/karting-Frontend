@@ -1,16 +1,35 @@
 import React from 'react'
 import './Contact.css'
 import { Col, Container, Row } from 'react-bootstrap';
+import twiter from '../Media/twitter.svg'
+import instagram from '../Media/instagram.svg'
+import Facebook from '../media/facebook.svg'
 
 
 export const Contact = () => {
   return (
     <div className="contactDesing">
-    <Container>
-      <Row>
+    <Container >
+      <Row> <Col xs={12} md={4} >
+          <div className="icons"> </div>
+        </Col>   
+        </Row>
+      <Row >
         
-        <Col xs={12} md={3}>
-          <div className="column  "></div>
+        <Col xs={12} md={4} className='desing'>
+          <div className="icons"> Follow Us in our social media and don´t miss anything</div>
+        </Col>
+        <Col xs={12} md={4} className='desing'>
+          <div className="icons">
+            <img className='rrss' src={twiter}  alt="" />
+            <img className='rrss' src={instagram} alt="" />
+            <img className='rrss' src={Facebook} alt="" /> </div>
+            <div>@SpeedRacerKarting</div>
+        </Col>
+        <Col xs={12} md={4} className='desing'>
+          <div className="icons">
+           Tlf: 654 254 856 </div>
+            
         </Col>
       </Row>
       <Row>

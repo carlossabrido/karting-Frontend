@@ -1,11 +1,11 @@
 import axios from "axios";
-const port= "http://localhost:7000/"
+const route= "http://localhost:7000/"
 
 export const registerMe = (register) => {
-  return axios.post(`${port}user`, register);
+  return axios.post(`${route}user`, register);
 };
 export const logMe = (credentials) => {
-  return axios.post("http://localhost:7000/user/login", credentials);
+  return axios.post(`${route}user/login`, credentials);
 };
 
 export const bringProfile = async (credentials) => {
@@ -16,7 +16,7 @@ export const bringProfile = async (credentials) => {
       },
     };
     const response = await axios.get(
-      `http://localhost:7000/user/${credentials.token.id}`,
+      `${route}user/${credentials.token.id}`,
       config
     );
     return response.data;
@@ -36,7 +36,7 @@ export const bringAllProfiles = async (credentials, seek) => {
       },
     };
 
-    const response = await axios.get(`http://localhost:7000/user`, config);
+    const response = await axios.get(`${route}user`, config);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -51,7 +51,7 @@ export const deleteProfile = async (credentials, id) => {
       },
     };
     const response = await axios.delete(
-      `http://localhost:7000/user/${id}`,
+      `${route}user/${id}`,
       config
     );
 
@@ -69,7 +69,7 @@ export const bringBooking = async (credentials) => {
         Authorization: `Berarer ${credentials.bearer}`,
       },
     };
-    const response = await axios.get(`http://localhost:7000/bookings`, config);
+    const response = await axios.get(`${route}bookings`, config);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -84,7 +84,7 @@ export const createBooking = async (credentials, body) => {
       },
     };
     const response = await axios.post(
-      `http://localhost:7000/bookings`,
+      `${route}bookings`,
       body,
       config
     );
@@ -106,7 +106,7 @@ export const modifyBookingBack = async (credentials, id, body) => {
       },
     };
     const response = await axios.put(
-      `http://localhost:7000/bookings/${id}`,
+      `${route}bookings/${id}`,
       body,
       config
     );
@@ -126,7 +126,7 @@ export const deleteBookingBack = async (credentials, id) => {
       },
     };
     const response = await axios.delete(
-      `http://localhost:7000/bookings/${id}`,config
+      `${route}bookings/${id}`,config
     );
 
     return response.data;
@@ -136,11 +136,11 @@ export const deleteBookingBack = async (credentials, id) => {
 };
 
 export const getCircuit = async () => {
-  const response = await axios.get(`http://localhost:7000/circuit`);
+  const response = await axios.get(`${route}circuit`);
   return response.data;
 };
 export const getOpinion = async () => {
-  const response = await axios.get(`http://localhost:7000/opinion`);
+  const response = await axios.get(`${route}opinion`);
   return response.data;
 };
 
@@ -154,9 +154,29 @@ export const createReview = async (credentials, body) => {
     };
 
     const response = await axios.post(
-      `http://localhost:7000/opinion`,
+      `${route}opinion`,
       body,
       config
+    );
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+export const deleteReview = async (credentials, id) => {
+  console.log(credentials, "olacredendial"), console.log(id, "hola id");
+
+  try {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${credentials.bearer}`,
+      },
+    };
+    const response = await axios.delete(
+      `${route}opinion/${id}`,config
     );
 
     return response.data;

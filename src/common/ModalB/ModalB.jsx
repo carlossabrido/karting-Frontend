@@ -7,7 +7,7 @@ import { bringBooking, deleteBookingBack, getCircuit, modifyBookingBack } from "
 import moment from "moment/moment";
 
 export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }) => {
-  
+  const[formValid,SetformValid]=useState(false)
   const rdxData = useSelector(userData);
   const [hour, setHour] = useState([
     "11:00",
@@ -54,6 +54,12 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
       [name]: value,
     }));
     setSelHour(value);
+
+    // if(modifyBooking.start_date  && modifyBooking.start_time ) {
+    //   SetformValid(true)
+    // }else{
+    //   SetformValid(false)
+    // }
   };
 
   
@@ -129,7 +135,7 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
             placeholder="start date"
             onChange={(e) => {
               handlerModifyBooking("start_date", e.target.value);
-            }}
+            } }
           />
         </Modal.Body>
         <Modal.Body>
@@ -150,7 +156,7 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={editBooking}>
+          <Button variant="primary" onClick={editBooking} >
             Save Changes
           </Button>
         </Modal.Footer>

@@ -5,3 +5,45 @@
     color: white;
     font-weight: bold;
 }
+
+.icons{
+   
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+    
+}
+
+.rrss{
+    height: 2em;
+    width: 2em;
+    margin: 1em;
+    color: white;
+    
+    
+
+}
+
+.desing{
+    /* background-color: blue; */
+    margin-top: 5em;
+    transition: transform 0.7;
+    border-radius: 5%;
+}
+.desing:hover{
+     background-color: brown; 
+     transform: scale(1.2);
+
+    
+}
+
+@media(max-width:726px){
+    .desing{
+        margin-top: 2em;
+        transform: none !important
+
+    }
+    .peepe:hover{
+        background-color: brown;
+    }
+}

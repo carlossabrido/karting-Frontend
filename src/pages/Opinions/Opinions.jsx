@@ -4,7 +4,7 @@
     import Card from "react-bootstrap/Card";
     import Button from "react-bootstrap/Button";
     import Modal from "react-bootstrap/Modal";
-    import { createReview, getOpinion } from "../../Services/Apicalls";
+    import { createReview, deleteReview, getOpinion } from "../../Services/Apicalls";
     import { useSelector } from "react-redux";
     import { userData } from "../UserSlice";
 import { useNavigate } from "react-router-dom";
@@ -22,14 +22,32 @@ import { Prev } from "react-bootstrap/esm/PageItem";
         opinion:"",
         email:""
     })
+   const[review,setReview]=useState([])
+   const[errors,setErrors]=useState([])
 
-    const[review,setReview]=useState([])
-
+  const handlerErrors=()=>{
     
+    const alertError={}
 
-    useEffect(()=>{console.log(opinion)})
+    if(opinion.title.length>20){
+      alertError.title="your title is over 15 characters"
+    }
 
-    const handlerOpinion=(e)=>{
+    if(opinion.opinion.length>150){
+      alertError.opinion="your opinion is over 100 characters"
+      
+    }
+    setErrors(alertError)
+    
+    if(Object.keys(alertError).length === 0){
+      makeReview()
+
+    }
+
+   
+  }  
+   
+  const handlerOpinion=(e)=>{
 
         setOpinion((prevState)=>({
             ...prevState,
@@ -45,19 +63,42 @@ import { Prev } from "react-bootstrap/esm/PageItem";
           setReview(resultado);
         });
       }, []);
+
+      const updatesReviews= async ()=>{
+        getOpinion()
+        .then((resultado)=>
+        setReview(resultado))
+        .catch((error)=>console.log(error))
+      }
     
     const makeReview =async () => {
         createReview(dataRdx.credentials,opinion)
         .then((resultado)=>console.log(resultado))
+        updatesReviews()
+        handleClose()
         .catch((error)=>console.log(error))
     };
+
+    const removeReview=(opinionID)=>{
+       deleteReview(dataRdx.credentials, opinionID)
+        .then(
+          (resultado) => {
+            console.log(resultado, "eliminado")} );
+          updatesReviews()
+       .catch ((error)=>
+        console.log(error));
+      
+    };
+
+    
 
     return (
         <div className="opinionDesign">
             {dataRdx.credentials.token &&(
-        <div className="createReview">
-            <Button variant="primary" onClick={handleShow}>
-            Launch demo modal
+        <div className="createReview mt-2">
+            <Button variant="danger" onClick={handleShow}>
+              +
+            
             </Button>
 
             <Modal show={show} onHide={handleClose}>
@@ -73,28 +114,25 @@ import { Prev } from "react-bootstrap/esm/PageItem";
                 <Button variant="secondary" onClick={handleClose}>
                 Close
                 </Button>
-                <Button variant="primary" onClick={makeReview}>
+                <Button variant="primary" onClick={handlerErrors}>
                 Save Changes
                 </Button>
             </Modal.Footer>
             </Modal>
       </div>
       )}
-      <div className="row justify-content-center align-items-center">
+      <div className="width ">
       {review.map((review)=>(
         <div className="col-md-3 m-3" key={review.id}>
-          <Card style={{ width: "18rem" }}>
-            
+          <Card  border="success" style={{ width: "18rem" }}>
+          <Card.Header className="red">{review.email}</Card.Header>
             <Card.Body>
               <Card.Title>{review.title}</Card.Title>
-             
-              <Card.Subtitle className="mb-2 text-muted" >
-                {review.opinion}
-              </Card.Subtitle>
-              <Card.Text>
-                {review.email}
-                
-              </Card.Text>
+              {errors.title && <div className='error'>{errors.title}</div>}
+              <Card.Subtitle> {review.opinion} </Card.Subtitle>
+              {errors.opinion && <div className='error'>{errors.opinion}</div>}
+              <Button variant="danger" onClick={()=>removeReview(review._id)}>
+                </Button>
             </Card.Body>
           </Card>
         </div>  

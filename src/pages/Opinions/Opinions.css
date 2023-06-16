@@ -11,13 +11,13 @@
     
 }
 
-/* .imgFeedback{} */
-/* .boxReview{
-    width: 20em;
-    height: 5em;
-    background-color: brown;
-    flex-direction: column;
-} */
+.width{
+    width: 100vw;
+    margin-top: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .reviewsDesing{
     justify-content: center;
@@ -28,3 +28,7 @@
     height: 2em;
     background-color: aqua;
 }
+
+/* .error{
+    color: black;
+} */
