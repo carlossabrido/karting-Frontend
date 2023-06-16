@@ -1,7 +1,8 @@
 import axios from "axios";
+const port= "http://localhost:7000/"
 
 export const registerMe = (register) => {
-  return axios.post("http://localhost:7000/user", register);
+  return axios.post(`${port}user`, register);
 };
 export const logMe = (credentials) => {
   return axios.post("http://localhost:7000/user/login", credentials);

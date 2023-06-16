@@ -18,7 +18,7 @@ import { Prev } from "react-bootstrap/esm/PageItem";
     const navigate= useNavigate()
 
     const[opinion,setOpinion]=useState({
-        tittle:"",
+        title:"",
         opinion:""
     })
 
@@ -62,7 +62,7 @@ import { Prev } from "react-bootstrap/esm/PageItem";
             <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>
-                <input type="text" name='tittle' placeholder="Review Tittle" onChange={handlerOpinion} />
+                <input type="text" name='title' placeholder="Review Tittle" onChange={handlerOpinion} />
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -85,16 +85,17 @@ import { Prev } from "react-bootstrap/esm/PageItem";
           <Card style={{ width: "18rem" }}>
             
             <Card.Body>
-              <Card.Title>{review.tittle}</Card.Title>
+              <Card.Title>{review.title}</Card.Title>
              
               <Card.Subtitle className="mb-2 text-muted" >
                 {review.opinion}
               </Card.Subtitle>
               <Card.Text>
+                
               </Card.Text>
             </Card.Body>
           </Card>
-        </div>
+        </div>  
          ))}
       </div>
     </div>
