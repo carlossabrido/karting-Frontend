@@ -5,6 +5,7 @@ import { Home } from '../Home/Home'
 import {Login} from '../Login/Login'
 import { Register } from '../Register/Register'
 import { Profile } from '../Profile/Profile'
+import { AdminProfiles } from '../AdminProfiles/AdminProfiles'
 import { Booking } from '../Bookings/Bookings'
 import { NewBooking } from '../NewBooking/NewBooking'
 import { Contact } from '../Contact/Contact'
@@ -23,7 +24,7 @@ export const Body = () => {
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/profile' element={<Profile/>}/>
-        
+        <Route path='/adminProfiles' element={<AdminProfiles/>}/>
         <Route path='/bookings' element={<Booking/>} />  
         <Route path='/newBooking' element={<NewBooking/>}/> 
         <Route path='/contact' element={<Contact/>}/> 

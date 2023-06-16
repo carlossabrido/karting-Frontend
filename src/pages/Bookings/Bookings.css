@@ -10,9 +10,21 @@
 
 .mt{
     margin-top: 5em;
-    
-  
+    border-radius: solid, 0,1em white;
+
 }
+
+.table2{
+    height: 3em;
+    border: solid white;
+    margin: 0.5em;
+    ;
+}
+.table2:hover{
+    background-color: brown;
+}
+
+
 
 .editButton{
     height: 1.5em;

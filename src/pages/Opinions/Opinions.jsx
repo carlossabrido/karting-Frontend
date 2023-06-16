@@ -19,7 +19,8 @@ import { Prev } from "react-bootstrap/esm/PageItem";
 
     const[opinion,setOpinion]=useState({
         title:"",
-        opinion:""
+        opinion:"",
+        email:""
     })
 
     const[review,setReview]=useState([])
@@ -91,6 +92,7 @@ import { Prev } from "react-bootstrap/esm/PageItem";
                 {review.opinion}
               </Card.Subtitle>
               <Card.Text>
+                {review.email}
                 
               </Card.Text>
             </Card.Body>

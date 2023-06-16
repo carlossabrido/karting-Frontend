@@ -145,6 +145,7 @@ export const getOpinion = async () => {
 };
 
 export const createReview = async (credentials, body) => {
+  console.log(body,'soy body')
   try {
     let config = {
       headers: {

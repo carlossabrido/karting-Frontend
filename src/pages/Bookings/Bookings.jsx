@@ -83,7 +83,7 @@ export const Booking = () => {
       ) : (
         <Container className="mt">
           {bookings.map((booking) => (
-            <Row className="table" key={booking.id}>
+            <Row className="table2" key={booking.id}>
               <Col>{booking.client.name}</Col>
               <Col>{booking._id}</Col>
               <Col>{booking.client.email}</Col>
@@ -94,7 +94,6 @@ export const Booking = () => {
                   className="editButton m-1"
                   onClick={() => handleShowModal(booking._id)}
                 >
-                
                 </Button>
                 <Button variant="danger"
                   className="deleteButtton"
