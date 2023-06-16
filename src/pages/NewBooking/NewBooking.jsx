@@ -15,11 +15,12 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import moment from 'moment/moment'
 import { useNavigate } from 'react-router-dom'
+import { Today } from '@material-ui/icons'
 
 
 export const NewBooking = () => {
     const navigate=useNavigate()
-
+    const today= new Date().toISOString().split('T')[0]
     const rdxData=useSelector(userData)
     const[hour,setHour]=useState(["11:00","12:00","13:00","16:00","17:00","18:00","19:00","20:00"])
     const[booking, setBooking]=useState({
@@ -54,6 +55,7 @@ const handlerBooking= async(name,value)=>{
 
 const makeBooking= (e)=>{
     e.preventDefault();
+    
     const selectDate= moment(booking.start_date);
     const selectTime=moment(booking.start_time,'HH:mm')
     const adjustedDate = selectDate
@@ -93,7 +95,7 @@ const makeBooking= (e)=>{
         <Form>
       <Form.Group className="mb-3" controlId="formGroupEmail">
         <Form.Label></Form.Label>
-        <Form.Control type="date" name='start_date' placeholder="start date" onChange={(e)=>{handlerBooking('start_date',e.target.value)}} />
+        <Form.Control type="date" name='start_date' min={today} placeholder="start date" onChange={(e)=>{handlerBooking('start_date',e.target.value)}} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formGroupEmail">
         <Form.Label></Form.Label>
