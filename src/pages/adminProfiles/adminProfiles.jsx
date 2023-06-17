@@ -93,10 +93,10 @@ const updateProfiles = () => {
                 <Row className='table' key={profile.id}>
                     <Col>{profile.name}</Col>
                     <Col>{profile.lastname}</Col>
-                    <Col>{profile.email}</Col>
-                    <Col>{profile.phone_number}</Col>
-                    <Col>{profile.role}</Col>
-                    <Col>  <Button variant="danger" className='deleteButton' onClick={()=>removeProfile(profile._id)}>Primary</Button>{' '}
+                    <Col className='noMobile'>{profile.email}</Col>
+                    <Col >{profile.phone_number}</Col>
+                    <Col className='noMobile'>{profile.role}</Col>
+                    <Col>  <Button variant="danger" className='deleteButton' onClick={()=>removeProfile(profile._id)}></Button>{' '}
          
                     
                     </Col>

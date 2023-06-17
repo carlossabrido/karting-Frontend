@@ -34,7 +34,17 @@
     background-color: brown;
 }
 
-.deleteButtton{
-    background-color: azure;
-    color: blueviolet;
+
+
+.containerBooking{
+    display: flex;
+    margin: 2em;
+    margin-top: 5em;
+
 }
+
+@media (max-width: 767px) {
+    .table2 .noMobile{
+      display: none;
+    }
+  }

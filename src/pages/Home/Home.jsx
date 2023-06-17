@@ -5,7 +5,7 @@ import Portada from '../Media/portada3.png'
 import Circuit from '../Media/circuito1.png'
 import Circuit2 from '../Media/circuito2.png'
 import Circuit3 from '../Media/circuito3.png'
-import Parrilla from '../Media/kart2l.jpg'
+import kartEnd from '../Media/imagenFinal.png'
 import kart from '../Media/kart4.jpg'
 import kart2 from '../Media/KARTING3.jpg'
 import Carousel from 'react-bootstrap/Carousel';
@@ -20,16 +20,17 @@ export const Home = () => {
        <img className='firstImg' src={Portada} alt="" />
     </div>
     <div className='box'>
-       <div type="button" className='goToRegister' onClick={()=>navigate('/register')}><h1>Registrate aqui!!</h1> </div>
+       <div type="button" className='goToRegister' onClick={()=>navigate('/register')}><h1>Sing up here !!</h1> </div>
     </div>
     <div className='routes'>
-
-      <img className='pepe' src={kart} alt="" onClick={()=>navigate('/reviews')} />
-      <img className='pepe' src={kart2} alt="" onClick={()=>navigate('/contact')}/>
+    
+      <img className='images' src={kart} alt="" onClick={()=>navigate('/reviews')} />
+      
+      <img className='images' src={kart2} alt="" onClick={()=>navigate('/contact')}/>
 
     </div>
     <div className='carousel'>
-    <Carousel className='carousel'>
+    <Carousel className='carousel mb-5'>
       <Carousel.Item>
         <img
           className="d-block w-100"
@@ -58,7 +59,15 @@ export const Home = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-    </div> 
     </div>
+    <div className='break'></div> 
+    <div className='endBox'>
+    
+      <img className='images2' src={kartEnd} alt="" onClick={()=>navigate('images')} />
+    
+    </div>
+    <div className='endBox2'></div>
+    </div>
+    
   )
 }

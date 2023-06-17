@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import { logout, userData } from "../../pages/UserSlice";
 import { useDispatch, useSelector } from "react-redux";
+import logo from "../../pages/Media/pin.png"
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -29,7 +30,9 @@ export const Header = () => {
           {" "}
           <Navbar className="color" collapseOnSelect expand="lg">
             <Container className="color">
-              <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+              <Navbar.Brand href="#home">
+                <img className="logo" src={logo} alt="" />
+              </Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
@@ -50,7 +53,9 @@ export const Header = () => {
       ) : (
         <Navbar className="color" collapseOnSelect expand="lg">
           <Container className="color">
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Brand href="#home">
+              <img className="logo" src={logo} alt="" />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">

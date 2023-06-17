@@ -130,6 +130,7 @@ import { Prev } from "react-bootstrap/esm/PageItem";
               <Card.Title>{review.title}</Card.Title>
               {errors.title && <div className='error'>{errors.title}</div>}
               <Card.Subtitle> {review.opinion} </Card.Subtitle>
+              
               {errors.opinion && <div className='error'>{errors.opinion}</div>}
               <Button variant="danger" onClick={()=>removeReview(review._id)}>
                 </Button>

@@ -1,9 +1,13 @@
 .color{
     background: linear-gradient(to bottom right, rgb(177, 33, 42), rgb(141, 10, 32));
     color: beige;
-    /* position: fixed; */
-    width: 100vw;
-    height: 4em;
-    
-    
+
+}
+.logo{
+    width: 2em;
+    height: 2em;
+}
+
+.bold{
+    font-weight: bold;
 }
