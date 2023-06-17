@@ -105,7 +105,7 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
     <div>
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Edit Booking</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <DropdownButton
