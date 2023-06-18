@@ -1,7 +1,7 @@
  <img src="src/pages/Media/gueek.png" alt="JavaScript" >
 
 
-# Dental Clinic
+# Karting Project
 
 Project focused in create a karting Website with React  implementing all kinds of functionalities
 
