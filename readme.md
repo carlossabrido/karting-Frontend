@@ -9,7 +9,7 @@ Project focused in create a karting Website with React  implementing all kinds o
 
 I leave here the administrator user to have access to everything
 
-Check it out here <a href="karting-frontend.vercel.app">karting</a>
+Check it out here <a href="https://karting-frontend.vercel.app/">karting</a>
 
 user:admin@gmail.com
 
