@@ -63,7 +63,7 @@ export const Home = () => {
     <div className='break'></div> 
     <div className='endBox'>
     
-      <img className='images2' src={kartEnd} alt="" onClick={()=>navigate('images')} />
+      <img className='images2' src={kartEnd} alt=""  />
     
     </div>
     <div className='endBox2'></div>
