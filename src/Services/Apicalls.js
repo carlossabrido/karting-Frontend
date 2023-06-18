@@ -184,3 +184,27 @@ export const deleteReview = async (credentials, id) => {
     console.log(error);
   }
 };
+
+
+export const modifyProfilee = async (credentials, id, body) => {
+  console.log(credentials,'olacredendial'),
+  console.log(id,'hola id')
+  console.log(body,'holabody')
+
+  try {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${credentials.bearer}`,
+      },
+    };
+    const response = await axios.put(
+      `${route}user/${id}`,
+      body,
+      config
+    );
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};

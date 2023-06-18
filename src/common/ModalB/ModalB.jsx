@@ -7,7 +7,7 @@ import { bringBooking, deleteBookingBack, getCircuit, modifyBookingBack } from "
 import moment from "moment/moment";
 
 export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }) => {
-  const[formValid,SetformValid]=useState(false)
+ 
   const rdxData = useSelector(userData);
   const [hour, setHour] = useState([
     "11:00",
@@ -23,7 +23,7 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
     booking:bookingId
   }];
 
-
+  const[showError,setShowError]=useState(false)
   const [modifyBooking, setModifyBooking] = useState({
     type: "",
     start_date: "",
@@ -75,6 +75,14 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
  
 // modify booking function 
   const editBooking = async (e) => {
+
+    if(modifyBooking.type===""||
+    modifyBooking.start_date===""||
+    modifyBooking.start_time===""){
+      setShowError(true)
+
+    } else {
+      setShowError(false)
     e.preventDefault();
     const selectDate = moment(modifyBooking.start_date);
     const selectTime = moment(modifyBooking.start_time, "HH:mm");
@@ -84,11 +92,8 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
       .set("second", 0);
     const fixDate = adjustedDate.format("YYYY-MM-DD[T]HH:mm:ss.SSS[Z]");
     const updateBooking = { ...modifyBooking, start_date: fixDate };
-
-
-    console.log(modifyBookingBack,'que te doy')
     try{
-      console.log(idBooking,'josete')
+      
     await modifyBookingBack(rdxData.credentials,idBooking.booking ,updateBooking)
       .then((resultado) => {
         console.log(resultado);
@@ -98,7 +103,7 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
     }
     catch(error){ console.log(error)};
   }
-
+  }
 
   
   return (
@@ -159,6 +164,7 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
           <Button variant="primary" onClick={editBooking} >
             Save Changes
           </Button>
+          {showError && <div className='error-message'>Fill up all the fields</div>}
         </Modal.Footer>
       </Modal>
     </div>

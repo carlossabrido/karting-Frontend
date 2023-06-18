@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import store from './app/store.js'
 import persistStore from 'redux-persist/es/persistStore'
+
 const persistor= persistStore(store)
 
 render(
