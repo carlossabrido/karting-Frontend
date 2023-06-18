@@ -91,13 +91,13 @@
           <Container>
         <Row>  
           <Col  xs={6} md={4}>
-            <Image src={cirtuito1} rounded className={ `pic ${selectCircuit ==="647ef651d1ce20e22cf8199f" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("647ef651d1ce20e22cf8199f")}  />Baku
+            <Image src={cirtuito1} rounded className={ `pic ${selectCircuit ==="648ef23d96e7727b50f5dcae" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("648ef23d96e7727b50f5dcae")}  />Baku
           </Col>  
           <Col xs={6} md={4}>
-          <Image src={cirtuito2} rounded className={ `pic ${selectCircuit ==="648ad9ddd45db60796f12567" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("648ad9ddd45db60796f12567")} />Silverstone
+          <Image src={cirtuito2} rounded className={ `pic ${selectCircuit ==="648ee9cb96e7727b50f5dcaa" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("648ee9cb96e7727b50f5dcaa")} />Silverstone
           </Col>  
           <Col xs={6} md={4}>
-          <Image src={cirtuito3} rounded className={ `pic ${selectCircuit ==="648ad8ed0253162e078ec873" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("648ad8ed0253162e078ec873")}/>Barein
+          <Image src={cirtuito3} rounded className={ `pic ${selectCircuit ==="648ef24c96e7727b50f5dcb0" ? "picSelected":"" }`} name="type" onClick={()=>handlerType("648ef24c96e7727b50f5dcb0")}/>Barein
           </Col>
         </Row>
       </Container>   
