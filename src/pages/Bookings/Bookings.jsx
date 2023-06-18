@@ -17,7 +17,7 @@ export const Booking = () => {
   useEffect(() => {
     bringBooking(dataRdx.credentials)
       .then((resultado) => {
-        console.log(resultado, "resultado");
+        ;
         setBookings(resultado);
       })
       .catch((error) => console.log(error));
@@ -27,7 +27,6 @@ export const Booking = () => {
   const [selectedBookingId, setSelectedBookingId] = useState(null);
 
   const handleShowModal = (bookingID) => {
-    console.log("Booking ID:", bookingID);
     setSelectedBookingId(bookingID);
     setShowModal(true);
   };

@@ -12,7 +12,8 @@ import { Contact } from '../Contact/Contact'
 import { Opinions } from '../Opinions/Opinions'
 import { CreateAdmin } from '../CreateAdmin/CreateAdmin'
 
-import AdminProfiless  from '../AdminProfiles/AdminProfiles'
+// import AdminProfiless  from '../AdminProfiles/AdminProfiles'
+import { AdminProfiles2 } from '../AdminProfiles2/AdminProfiles2'
 
 
 
@@ -23,9 +24,10 @@ export const Body = () => {
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/profile' element={<Profile/>}/>
-        <Route path='/adminprofiles' element={<AdminProfiless/>}/>  
+       
         <Route path='/bookings' element={<Booking/>} />  
         <Route path='/newBooking' element={<NewBooking/>}/> 
+        <Route path='/adminProfiles2' element={<AdminProfiles2/>}/> 
         <Route path='/contact' element={<Contact/>}/> 
         <Route path='/reviews' element={<Opinions/>}/> 
         <Route path='/createAdmin' element={<CreateAdmin/>}/> 

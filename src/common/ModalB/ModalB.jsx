@@ -55,11 +55,6 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
     }));
     setSelHour(value);
 
-    // if(modifyBooking.start_date  && modifyBooking.start_time ) {
-    //   SetformValid(true)
-    // }else{
-    //   SetformValid(false)
-    // }
   };
 
   
