@@ -1,5 +1,6 @@
 import axios from "axios";
-const route= "http://localhost:7000/"
+// const route= "http://localhost:7000/"
+const route= "https://karting-backend.vercel.app/"
 
 export const registerMe = (register) => {
   return axios.post(`${route}user`, register);
