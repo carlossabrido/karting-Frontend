@@ -7,7 +7,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button';
 
 
-const AdminProfiles = () => {
+const AdminProfiless = () => {
     const[profile,setProfiles]=useState([])
     const[seek, setSeek]=useState("")
     const rdxData=useSelector(userData)
@@ -109,4 +109,4 @@ const updateProfiles = () => {
   
 }
 
-export default AdminProfiles
+export default AdminProfiless
