@@ -3,7 +3,7 @@ import './Contact.css'
 import { Col, Container, Row } from 'react-bootstrap';
 import twiter from '../Media/twitter.svg'
 import instagram from '../Media/instagram.svg'
-import Facebook from '../media/facebook.svg'
+// import Facebook from '../media/facebook.svg'
 
 
 export const Contact = () => {
@@ -23,13 +23,13 @@ export const Contact = () => {
           <div className="icons">
             <img className='rrss' src={twiter}  alt="" />
             <img className='rrss' src={instagram} alt="" />
-            <img className='rrss' src={Facebook} alt="" /> </div>
+             </div>
             <div>@SpeedRacerKarting</div>
         </Col>
         <Col xs={12} md={4} className='desing'>
           <div className="icons">
            Tlf: 654 254 856 </div>
-            
+           {/* <img className='rrss' src={Facebook} alt="" /> */}
         </Col>
       </Row>
       <Row>
