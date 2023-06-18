@@ -34,7 +34,7 @@ const handlerHerror=(e)=>{
   if(!registration.email){
     alertError.email="email error"
   }
-  if(!registration.phone_number){
+  if(!registration.phone_number || registration.phone_number.length>9){
     alertError.phone_number="phone number error"
   }
   if(!registration.password){

@@ -47,7 +47,7 @@ export const AdminProfiles2 = () => {
     useEffect(()=>{
         bringAllProfiles(rdxData.credentials)
         .then((resultado)=>{
-            console.log(resultado,'tio')
+        
         if(resultado.length>0){
             setProfiles(resultado)
         }})
@@ -64,9 +64,8 @@ const updateProfiles = () => {
 
 
     const removeProfile=async(profileId)=>{
-      console.log(profileId,'no me jodas')
      await deleteProfile(rdxData.credentials,profileId)
-      .then((resultado)=>console.log(resultado,'estoy bien'))
+      .then((resultado)=>(resultado))
       updateProfiles()
       .catch((error)=>console.log(error))
     }

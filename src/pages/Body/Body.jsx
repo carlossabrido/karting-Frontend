@@ -11,8 +11,6 @@ import { NewBooking } from '../NewBooking/NewBooking'
 import { Contact } from '../Contact/Contact'
 import { Opinions } from '../Opinions/Opinions'
 import { CreateAdmin } from '../CreateAdmin/CreateAdmin'
-
-// import AdminProfiless  from '../AdminProfiles/AdminProfiles'
 import { AdminProfiles2 } from '../AdminProfiles2/AdminProfiles2'
 
 
@@ -23,8 +21,7 @@ export const Body = () => {
         <Route path='/'element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/profile' element={<Profile/>}/>
-       
+        <Route path='/profile' element={<Profile/>}/>   
         <Route path='/bookings' element={<Booking/>} />  
         <Route path='/newBooking' element={<NewBooking/>}/> 
         <Route path='/adminProfiles2' element={<AdminProfiles2/>}/> 

@@ -42,6 +42,8 @@ export const ModalB = ({ showModal, handleCloseModal, bookingId, reloadBooking }
     });
   }, []);
 
+  // close modal 
+
   const handleClose = () => {
     handleCloseModal();
   };

@@ -11,7 +11,6 @@ import Card from 'react-bootstrap/Card';
 
 export const Booking = () => {
   const [bookings, setBookings] = useState([]);
-  // const[seek,setSeek]=useState("")
   const dataRdx = useSelector(userData);
 
   useEffect(() => {
@@ -48,8 +47,7 @@ export const Booking = () => {
     try {
       await deleteBookingBack(dataRdx.credentials, bookingID)
       .then(
-        (resultado) => {
-          console.log(resultado, "eliminado")} );
+        (resultado) );
         updateBooking()
     } catch (error) {
       console.log(error);

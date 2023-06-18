@@ -63,7 +63,7 @@ export const deleteProfile = async (credentials, id) => {
 };
 
 export const bringBooking = async (credentials) => {
-  console.log(credentials, "soy credentials");
+  
   try {
     let config = {
       headers: {
@@ -96,9 +96,7 @@ export const createBooking = async (credentials, body) => {
 };
 
 export const modifyBookingBack = async (credentials, id, body) => {
-  // console.log(credentials,'olacredendial'),
-  // console.log(id,'hola id')
-  // console.log(body,'holabody')
+ 
 
   try {
     let config = {
@@ -118,7 +116,6 @@ export const modifyBookingBack = async (credentials, id, body) => {
   }
 };
 export const deleteBookingBack = async (credentials, id) => {
-  // console.log(credentials, "olacredendial"), console.log(id, "hola id");
 
   try {
     let config = {
@@ -146,7 +143,7 @@ export const getOpinion = async () => {
 };
 
 export const createReview = async (credentials, body) => {
-  console.log(body,'soy body')
+
   try {
     let config = {
       headers: {
@@ -168,7 +165,7 @@ export const createReview = async (credentials, body) => {
 
 
 export const deleteReview = async (credentials, id) => {
-  console.log(credentials, "olacredendial"), console.log(id, "hola id");
+
 
   try {
     let config = {
@@ -188,10 +185,7 @@ export const deleteReview = async (credentials, id) => {
 
 
 export const modifyProfilee = async (credentials, id, body) => {
-  console.log(credentials,'olacredendial'),
-  console.log(id,'hola id')
-  console.log(body,'holabody')
-
+ 
   try {
     let config = {
       headers: {
