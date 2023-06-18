@@ -3,7 +3,6 @@ import './Contact.css'
 import { Col, Container, Row } from 'react-bootstrap';
 import twiter from '../Media/twitter.svg'
 import instagram from '../Media/instagram.svg'
-// import Facebook from '../media/facebook.svg'
 
 
 export const Contact = () => {
