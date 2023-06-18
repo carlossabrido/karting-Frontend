@@ -1,4 +1,4 @@
- <img src="src/src/pages/Media/gueek.png" alt="JavaScript" >
+ <img src="src/pages/Media/gueek.png" alt="JavaScript" >
 
 
 # Dental Clinic
@@ -9,8 +9,9 @@ Project focused in create a karting Website with React  implementing all kinds o
 
 I leave here the administrator user to have access to everything
 
+Check it out here [www.karting.com](https:://karting-frontend.vercel.app)
 
-admin@gmail.com
+user:admin@gmail.com
 
 password:admin123
 
