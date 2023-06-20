@@ -23,7 +23,7 @@ export const Profile = () => {
     lastname: "",
     email: "",
     password: "",
-    role: "client",
+    role: dataRx.credentials.role,
     phone_number: "",
   });
 
